@@ -1,0 +1,29 @@
+{
+  "name": "demo-actions",
+  "version": "0.0.1",
+  "description": "github actions 最佳实践。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XiaoMuCOOL/demo-actions.git"
+  },
+  "keywords": [
+    "actions",
+    "blog"
+  ],
+  "author": "XiaoMuCOOL",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XiaoMuCOOL/demo-actions/issues"
+  },
+  "homepage": "https://github.com/XiaoMuCOOL/demo-actions#readme",
+  "dependencies": {
+    "vuepress": "^1.2.0",
+    "vuepress-theme-meteorlxy": "^1.7.1"
+  }
+}
