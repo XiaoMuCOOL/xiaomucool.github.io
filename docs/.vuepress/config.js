@@ -1,6 +1,6 @@
 module.exports = {
   // 网站 Title
-  title: 'XiaoMuCOOL',
+  title: 'XiaoMuCOOL 博客',
   // 网站描述
   description: '小牧COOL的博客',
   // 网站语言
@@ -177,7 +177,8 @@ module.exports = {
     // 顶部导航栏内容
     nav: [
       { text: '首页', link: '/', exact: true },
-      { text: '文章', link: '/posts/', exact: false },
+      { text: '分类', link: '/posts/', exact: true },
+      { text: '主题指南', link: 'https://vuepress-theme-meteorlxy.meteorlxy.cn/posts/2019/02/26/theme-guide-zh.html', exact: true },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
