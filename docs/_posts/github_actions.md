@@ -1,16 +1,17 @@
 ---
-category: 教程
+category: 运维
 tags:
-  - actions
-  - github
   - 教程
-  - ci
+  - github actions
+  - ci/cd
 date: 2020-01-01
 title: Github Actions 教程
 draft: false
 ---
 
-# Github Actions 教程
+`Github Actions`：`GitHub`推出的持续集成服务（CI/CD），可以放弃`Jenkins`了，节省一台服务器。
+
+<!-- more -->
 
 ## 基本概念
 
@@ -69,11 +70,7 @@ jobs:
 ```
 
 ::: tip 注意
-:loudspeaker: 触发事件见[文档][1]
-:::
-
-::: danger 注意
-:loudspeaker: 工作流程语法见[文档][2]
+:loudspeaker: 触发事件见[文档][1]、工作流程语法见[文档][2]
 :::
 
 [1]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
