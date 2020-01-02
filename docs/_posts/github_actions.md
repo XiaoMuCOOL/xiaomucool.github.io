@@ -73,7 +73,8 @@ jobs:
 :::
 
 ::: danger 注意
-:loudspeaker: 触发事件见[文档][1]
+:loudspeaker: 工作流程语法见[文档][2]
 :::
 
 [1]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
+[2]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
