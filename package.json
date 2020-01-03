@@ -1,16 +1,15 @@
 {
-  "name": "demo-actions",
+  "name": "xiaomucool.github.io",
   "version": "0.0.1",
-  "description": "github actions 最佳实践。",
+  "description": "小牧COOL的博客。",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XiaoMuCOOL/demo-actions.git"
+    "url": "git+https://github.com/XiaoMuCOOL/xiaomucool.github.io.git"
   },
   "keywords": [
     "actions",
@@ -19,9 +18,9 @@
   "author": "XiaoMuCOOL",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XiaoMuCOOL/demo-actions/issues"
+    "url": "https://github.com/XiaoMuCOOL/xiaomucool.github.io/issues"
   },
-  "homepage": "https://github.com/XiaoMuCOOL/demo-actions#readme",
+  "homepage": "https://github.com/XiaoMuCOOL/xiaomucool.github.io#readme",
   "dependencies": {
     "vuepress": "^1.2.0",
     "vuepress-theme-meteorlxy": "^1.7.1"
