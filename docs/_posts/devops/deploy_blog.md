@@ -118,7 +118,56 @@ jobs:
 
 ## 使用阿里云OSS
 
-// TODO
+默认已有域名和SSL证书。
+
+**创建OSS：**
+
+进入阿里云对象存储OSS控制台，点击`创建 Bucket`，区域选择`中国（香港）`（国内节点绑定自定义域名需要备案），读写权限选择`公共读`。
+
+**创建accesskeys：**
+
+点击头像，选择`accesskeys`，在Github项目里的`Settings -> Secrets`设置`AccessKeyID`和`AccessKeySecret`。
+
+创建`.github/workflows/oss.yml`：
+```yml
+name: Ali OSS
+# 触发事件：push到dev
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    name: 部署到阿里云对象存储
+    runs-on: ubuntu-latest
+    steps:
+    - name: 更新代码
+      uses: actions/checkout@master
+
+    - name: 安装Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "12.x"
+
+    - name: 构建HTML
+      run: |
+        npm i
+        npm run build
+    
+    - name: 连接OSS
+      uses: manyuanrong/setup-ossutil@v1.0
+      with:
+        # 地域节点，在控制台查看
+        endpoint: oss-cn-hongkong.aliyuncs.com
+        # 刚刚创建的id和secret
+        access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+        access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+    
+    - name: 发布到OSS
+      run: ossutil cp -rf docs/.vuepress/dist/ oss://xiaomucool-blog/
+```
+
+
 
 
 [1]:https://vuepress.vuejs.org/zh/

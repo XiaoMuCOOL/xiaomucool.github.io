@@ -20,7 +20,7 @@ module.exports = {
       // 昵称
       nickname: '小牧COOL',
       // 个人简介 (支持 HTML)
-      description: '什么？你是万能的程序员！',
+      description: '什么？你是万能的程序员！<br> <a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5tyQDAd" style="position:relative;top:8px;">QQ群: 215259343</a>',
 
       // 电子邮箱
       email: 'xiaomucool@bingblue.com',
@@ -44,11 +44,6 @@ module.exports = {
         github: {
           account: 'xiaomucool',
           link: 'https://github.com/xiaomucool',
-        },
-
-        wechat: {
-          account: 'xiaomu_cool',
-          link: 'https://xiaomucool.com',
         },
 
         // Facebook 帐号和链接
@@ -161,7 +156,7 @@ module.exports = {
       poweredByTheme: false,
 
       // 添加自定义 footer (支持 HTML)
-      custom: 'Copyright ©2020 | Powered By <a href="https://xiaomucool.com" target="_blank">XiaoMuCOOL</a>',
+      custom: 'Copyright &copy;2020 & Powered By <a href="https://xiaomucool.com" target="_blank">XiaoMuCOOL</a>',
     },
 
     // 个人信息卡片相关设置 (可选)

@@ -2,7 +2,7 @@
 category: 分类
 tags:
   - 标签
-date: 日期
+date: 2020-02-03
 title: 标题
 draft: true
 ---
