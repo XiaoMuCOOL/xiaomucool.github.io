@@ -39,9 +39,9 @@ npm i vuepress-theme-meteorlxy -S
 
 环境安装好了，我们开始写文章吧！文章存放目录为：`docs/_posts/**/*.md`，它会默认读取这个文件夹下的md文件。
 
-主题`vuepress-theme-meteorlxy`需要配置一些参数，详情请见[文档][7]
+主题`vuepress-theme-meteorlxy`需要配置一些参数，详情请见[主题指南][7]
 
-在`package.json`文件下增加：
+配置好主题后，在`package.json`文件下增加：
 ```json{2-3}
 "scripts": {
   "dev": "vuepress dev docs",
@@ -70,13 +70,14 @@ npm run build
 
 ### 使用Github Actions
 
-`Actions`是自动化运维，持续集成服务，不了解的可以看我这篇[教程][8]。
+`Actions`是自动化运维，持续集成服务，不了解的可以看我这篇文章：[《Github Actions 教程》][8]。
 
-**需求**
+**需求：**
 
 我们把代码提交到`dev分支`，希望`Actions`可以自动`npm run build`并且把生成的`HTML文件`提交到`master分支`
 
-**实现**
+**实现：**
+
 首先在`dev分支`下创建`.github/workflows/github_pages.yml`：
 ```yml
 name: Github Pages
@@ -113,7 +114,7 @@ jobs:
 - `PUBLISH_BRANCH`是你要提交的分支
 - `PERSONAL_TOKEN`在你项目的`Settings -> Secrets`里设置，`Secret Value`在：`个人Settings -> Developer settings -> Personal access tokens`里设置。
 
-至此，我们访问[用户名].pages.io就能看到我们自己的博客内容了！感谢！
+至此，我们访问`[用户名].pages.io`就能看到我们自己的博客了！非常完美！离成功只差最后一步了！
 
 ## 使用阿里云OSS
 
