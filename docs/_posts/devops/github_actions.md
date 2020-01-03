@@ -69,9 +69,17 @@ jobs:
     needs: job1
 ```
 
+## 常用Action
+
+我们可以在[官方市场][3]里搜索所有`action`，比较常用的有：
+
+- checkout
+- ...
+
 ::: tip 注意
 :loudspeaker: 触发事件见[文档][1]、工作流程语法见[文档][2]
 :::
 
 [1]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
 [2]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+[3]:https://github.com/marketplace?type=actions

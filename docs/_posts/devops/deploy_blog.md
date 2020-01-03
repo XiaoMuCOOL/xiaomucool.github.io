@@ -21,7 +21,7 @@ draft: false
 - `push`到`github`
 - `github actions`自动生成静态页面部署到`master分支`
 - `github actions`自动部署到`阿里云OSS`
-- 完成，查看[xiaomucool.pages.io][2]和[xiaomucool.com][3]
+- 完成，查看[xiaomucool.github.io][2]和[xiaomucool.com][3]
 
 ## 使用Vuepress
 
@@ -122,7 +122,7 @@ jobs:
 
 
 [1]:https://vuepress.vuejs.org/zh/
-[2]:https://xiaomucool.pages.io
+[2]:https://xiaomucool.github.io
 [3]:https://xiaomucool.com
 [4]:https://github.com/meteorlxy/vuepress-theme-meteorlxy
 [5]:https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json]:https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json

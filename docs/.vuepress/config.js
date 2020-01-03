@@ -46,6 +46,11 @@ module.exports = {
           link: 'https://github.com/xiaomucool',
         },
 
+        wechat: {
+          account: 'xiaomu_cool',
+          link: 'https://xiaomucool.com',
+        },
+
         // Facebook 帐号和链接
         // facebook: {
         //   account: 'meteorlxy.cn',
@@ -156,7 +161,7 @@ module.exports = {
       poweredByTheme: false,
 
       // 添加自定义 footer (支持 HTML)
-      custom: 'Copyright 2020 <a href="https://github.com/xiaomucool" target="_blank">XiaoMuCOOL</a> | MIT License',
+      custom: 'Copyright ©2020 | Powered By <a href="https://xiaomucool.com" target="_blank">XiaoMuCOOL</a>',
     },
 
     // 个人信息卡片相关设置 (可选)
@@ -178,20 +183,20 @@ module.exports = {
     nav: [
       { text: '首页', link: '/', exact: true },
       { text: '分类', link: '/posts/', exact: true },
-      { text: '主题指南', link: 'https://vuepress-theme-meteorlxy.meteorlxy.cn/posts/2019/02/26/theme-guide-zh.html', exact: true },
+      { text: 'Github', link: 'https://github.com/XiaoMuCOOL/xiaomucool.github.io', exact: true },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
     comments: {
       owner: 'xiaomucool',
-      repo: 'demo-actions',
-      clientId: 'MY_CLIENT_ID',
-      clientSecret: 'MY_CLIENT_SECRET',
+      repo: 'xiaomucool.github.io',
+      clientId: '6d2ec1bfe82c75ff7330',
+      clientSecret: '5a71379652e218da7836a2a156c25cec483ea8e9',
     },
 
     // 分页配置 (可选)
     pagination: {
-      perPage: 5,
+      perPage: 10,
     },
 
     // 默认页面（可选，默认全为 true）
