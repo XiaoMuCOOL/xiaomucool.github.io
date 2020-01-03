@@ -70,17 +70,36 @@ jobs:
     needs: job1
 ```
 
-## 常用Action
-
-我们可以在[官方市场][3]里搜索所有`action`，比较常用的有：
-
-- checkout
-- ...
 
 ::: tip 注意
 :loudspeaker: 触发事件见[文档][1]、工作流程语法见[文档][2]
 :::
 
+## 常用Action
+
+我们可以在[官方市场][3]里搜索所有`action`，比较常用的有：
+
+| 名称                     | 功能            |
+| ------------------------ |:--------------:| 
+| [actions/checkout][4]    |    更新代码     |
+| [actions/setup-node][5]  |   安装Nodejs    |
+| [peaceiris/actions-gh-pages][6] | 提交生成代码到某个分支 |
+| [manyuanrong/setup-ossutil][7] | 提交生成代码到阿里云OSS |
+| [稍后更新][8] | 发送邮件 |
+| [稍后更新][9] | 发送短信 |
+| [稍后更新][10] | 连接到服务器 |
+| [稍后更新][11] | 更新Docker |
+
+
+
 [1]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
 [2]:https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 [3]:https://github.com/marketplace?type=actions
+[4]:https://github.com/marketplace/actions/checkout
+[5]:https://github.com/marketplace/actions/setup-node-js-for-use-with-actions
+[6]:https://github.com/marketplace/actions/github-pages-action
+[7]:https://github.com/marketplace/actions/setup-ossutil
+[8]:https://google.com
+[9]:https://google.com
+[10]:https://google.com
+[11]:https://google.com

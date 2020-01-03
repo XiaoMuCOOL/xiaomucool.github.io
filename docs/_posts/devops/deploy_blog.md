@@ -125,18 +125,22 @@ jobs:
 
 进入阿里云对象存储OSS控制台，点击`创建 Bucket`，区域选择`中国（香港）`（国内节点绑定自定义域名需要备案），读写权限选择`公共读`。
 
+在`基础设置 -> 静态页面`设置首页和404页面，在`域名管理 -> 绑定用户域名`，绑定自定义域名。
+
 **创建accesskeys：**
 
-点击头像，选择`accesskeys`，在Github项目里的`Settings -> Secrets`设置`AccessKeyID`和`AccessKeySecret`。
+阿里云控制台点击头像，选择`accesskeys`，点击`创建AccessKey`按钮，然后在Github项目里的`Settings -> Secrets`设置`AccessKeyID`和`AccessKeySecret`。
+
+**编写Github Actions：**
 
 创建`.github/workflows/oss.yml`：
 ```yml
 name: Ali OSS
-# 触发事件：push到dev
+# 触发事件：push到oss
 on:
   push:
     branches:
-      - dev
+      - oss
 jobs:
   deploy:
     name: 部署到阿里云对象存储
@@ -168,6 +172,7 @@ jobs:
       run: ossutil cp -rf docs/.vuepress/dist/ oss://xiaomucool-blog/
 ```
 
+然后访问你的域名，就能看到你的博客了！我知道你的心情是喜悦的，但是一定要坚持写文章！加油，共勉！
 
 
 
