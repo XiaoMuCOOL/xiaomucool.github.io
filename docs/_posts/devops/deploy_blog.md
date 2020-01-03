@@ -180,7 +180,7 @@ jobs:
 [2]:https://xiaomucool.github.io
 [3]:https://xiaomucool.com
 [4]:https://github.com/meteorlxy/vuepress-theme-meteorlxy
-[5]:https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json]:https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json
+[5]:https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json
 [6]:https://guides.github.com/features/mastering-markdown/
 [7]:https://vuepress-theme-meteorlxy.meteorlxy.cn/posts/2019/02/26/theme-guide-zh.html
 [8]:/_posts/devops/github_actions
