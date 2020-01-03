@@ -14,8 +14,9 @@ jobs:
       uses: actions/setup-node@v1
     
     - name: 构建HTML
-      run: npm i
-      run: npm run build
+      run: |
+        npm i
+        npm run build
     
     - name: 发布
       uses: peaceiris/actions-gh-pages@v2.8.0
