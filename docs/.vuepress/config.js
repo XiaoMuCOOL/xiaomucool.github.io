@@ -183,7 +183,6 @@ module.exports = {
 
     // 评论配置，参考下方 [页面评论] 章节
     comments: {
-      platform: 'github-v4',
       owner: 'xiaomucool',
       repo: 'xiaomucool.github.io',
       clientId: '3b95a1287a66430ba043',
