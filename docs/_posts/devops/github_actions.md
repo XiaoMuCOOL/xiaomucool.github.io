@@ -9,7 +9,7 @@ title: Github Actions 教程
 draft: false
 ---
 
-`Github Actions`：`GitHub`推出的持续集成服务（CI/CD），可以放弃`Jenkins`了，节省一台服务器。
+`Github Actions`是`GitHub`推出的持续集成服务（CI/CD），可以放弃`Jenkins`了，节省一台服务器。
 
 <!-- more -->
 

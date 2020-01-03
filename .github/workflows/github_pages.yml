@@ -1,10 +1,11 @@
-name: 发布到Github Pages
+name: Github Pages
 on:
   push:
     branches:
       - dev
 jobs:
-  build-and-deploy:
+  deploy:
+    name: 部署到master分支
     runs-on: ubuntu-latest
     steps:
     - name: 更新代码
