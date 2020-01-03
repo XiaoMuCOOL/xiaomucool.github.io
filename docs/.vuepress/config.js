@@ -187,6 +187,7 @@ module.exports = {
       repo: 'xiaomucool.github.io',
       clientId: '6d2ec1bfe82c75ff7330',
       clientSecret: '5a71379652e218da7836a2a156c25cec483ea8e9',
+      autoCreateIssue: false
     },
 
     // 分页配置 (可选)
