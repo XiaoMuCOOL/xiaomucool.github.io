@@ -6,6 +6,7 @@ tags:
   - ci/cd
 date: 2020-01-01
 title: Github Actions 教程
+vssue-id: 2
 draft: false
 ---
 
