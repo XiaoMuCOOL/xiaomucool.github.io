@@ -14,7 +14,7 @@ Git相关的一些操作记录。
 
 ## 稀疏检出
 
-只`checkout`某个文件夹。
+稀疏检出：只检出你配置的文件夹。
 
 ```git
 git config core.sparseCheckout true
@@ -22,6 +22,16 @@ echo "document/" >> .git/info/sparse-checkout
 ```
 
 然后正常`pull`、`checkout`、`merge`都只会对你配置的`document`文件夹下生效。
+
+关闭稀疏检出：
+
+```git
+echo "/*" > .git/info/sparse-checkout
+git read-tree -mu HEAD
+
+git config core.sparseCheckout false
+rm -rf .git/info/sparse-checkout
+```
 
 ## 删除已add文件
 
