@@ -25,3 +25,14 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         PUBLISH_BRANCH: master
         PUBLISH_DIR: docs/.vuepress/dist
+
+    - name: 发送邮件
+      if: always()
+      uses: bingblue/send-nodemailer@master
+      with:
+        user: ${{ secrets.MAIL_USER }}
+        pass: ${{ secrets.MAIL_PASS }}
+        to: 895355044@qq.com
+        subject: '[滨清科技] --> ${{ github.repository }}发布结果'
+        github: ${{ toJson(github) }}
+        success: ${{ job.status }}

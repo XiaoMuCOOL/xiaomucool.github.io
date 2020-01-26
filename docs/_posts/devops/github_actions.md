@@ -52,6 +52,8 @@ jobs:
     steps:
       # 步骤说明
       - name: 步骤
+        # 条件判断：总是运行always、上一步成功success、上一步失败failure
+        if: always()
         # 环境变量
         evn:
           HOME_PATH: ../home
@@ -85,10 +87,9 @@ jobs:
 | [actions/setup-node][5]  |   安装Nodejs    |
 | [peaceiris/actions-gh-pages][6] | 提交生成代码到某个分支 |
 | [manyuanrong/setup-ossutil][7] | 提交生成代码到阿里云OSS |
-| [稍后更新][8] | 发送邮件 |
+| [bingblue/send-nodemailer][8] | 发送邮件 |
 | [稍后更新][9] | 发送短信 |
-| [稍后更新][10] | 连接到服务器 |
-| [稍后更新][11] | 更新Docker |
+| [elgohr/Publish-Docker-Github-Action][10] | 发布Docker到私有库 |
 
 
 
@@ -99,7 +100,7 @@ jobs:
 [5]:https://github.com/marketplace/actions/setup-node-js-for-use-with-actions
 [6]:https://github.com/marketplace/actions/github-pages-action
 [7]:https://github.com/marketplace/actions/setup-ossutil
-[8]:https://google.com
-[9]:https://google.com
-[10]:https://google.com
-[11]:https://google.com
+[8]:https://github.com/marketplace/actions/send-nodemailer
+[9]:https://github.com/marketplace/actions/
+[10]:https://github.com/marketplace/actions/publish-docker
+[11]:https://github.com/marketplace/actions/
