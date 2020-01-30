@@ -26,14 +26,14 @@ draft: false
 
 ## 使用Vuepress
 
-[`Vuepress`][1]是Vue 驱动的静态网站生成器，支持[`markdown`][6]语法、[`Emoji`][5]图标。
+[Vuepress][1]是Vue 驱动的静态网站生成器，支持[markdown][6]语法、[Emoji][5]图标。
 
 我们先来安装它：
 ```cmd
 npm i vuepress -S
 ```
 
-`Vuepress`默认主题适合写接口文档，我们还要安装适合博客的主题[`vuepress-theme-meteorlxy`][4]：
+`Vuepress`默认主题适合写接口文档，我们还要安装适合博客的主题[vuepress-theme-meteorlxy][4]：
 ```cmd
 npm i vuepress-theme-meteorlxy -S
 ```
