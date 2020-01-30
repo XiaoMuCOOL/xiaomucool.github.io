@@ -42,8 +42,12 @@ $ git push origin master
 $ git checkout master
 # 先新建一个临时分支
 $ git checkout -b temp
-# 只检出5iuse-ui文件夹
+# 1.先删除所有文件
+# 2.只检出5iuse-ui文件夹
+# 3.提交commit
 $ git checkout master /5iuse-ui
+$ git add .
+$ git commit -m '只更新5iuse-ui文件夹'
 # 切换到frontend-dev分支
 $ git checkout frontend-dev
 # 合并temp分支
