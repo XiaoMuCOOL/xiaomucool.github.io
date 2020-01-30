@@ -37,7 +37,7 @@ $ git push origin master
 
 前端默认在`frontend-dev`分支下开发，但是要先合并`master`分支下的`/5iuse-ui`文件夹。
 
-```git{5,6}
+```git{5-10}
 # 在master分支
 $ git checkout master
 # 先新建一个临时分支
@@ -45,7 +45,7 @@ $ git checkout -b temp
 # 1.先删除所有文件
 # 2.只检出5iuse-ui文件夹
 # 3.提交commit
-$ git checkout master /5iuse-ui
+$ git checkout master 5iuse-ui/
 $ git add .
 $ git commit -m '只更新5iuse-ui文件夹'
 # 切换到frontend-dev分支
