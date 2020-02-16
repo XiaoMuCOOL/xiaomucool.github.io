@@ -1,4 +1,4 @@
-# XiaoMuCOOL.pages.io
+# XiaoMuCOOL.github.io
 小牧COOL的博客
 
 ## :rocket:Getting started
