@@ -4,6 +4,7 @@
   "description": "小牧COOL的博客。",
   "main": "index.js",
   "scripts": {
+    "start": "npm run dev",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
