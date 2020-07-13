@@ -23,3 +23,17 @@ vssue-id: 5
 npm install --save node-sass --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist --sass-binary-site=http://npm.taobao.org/mirrors/node-sass
 ```
 </details>
+
+## 后端
+
+### 数据库问题
+
+<details>
+<summary>1、数据库保存表情图标</summary>
+
+```sql
+ALTER TABLE 表名 MODIFY 字段名 VARCHAR(128) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+# ALTER TABLE sys_user MODIFY nickname VARCHAR(128) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+</details>
