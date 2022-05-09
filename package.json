@@ -1,7 +1,7 @@
 {
   "name": "xiaomucool.github.io",
-  "version": "0.0.1",
-  "description": "小牧COOL的博客。",
+  "version": "1.0.0",
+  "description": "XiaoMuの技术世界",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/XiaoMuCOOL/xiaomucool.github.io#readme",
   "dependencies": {
-    "vuepress": "^1.2.0",
-    "vuepress-theme-meteorlxy": "^1.7.1"
+    "vuepress": "^1.9.7",
+    "vuepress-theme-meteorlxy": "^1.9.0"
   }
 }

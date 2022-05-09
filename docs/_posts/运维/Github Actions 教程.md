@@ -3,7 +3,6 @@ category: 运维
 tags:
   - 教程
   - github actions
-  - ci/cd
 date: 2020-01-01
 title: Github Actions 教程
 vssue-id: 2

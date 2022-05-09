@@ -4,7 +4,7 @@ tags:
   - 教程
   - git
 date: 2020-01-21
-title: Git 相关
+title: Git 教程
 vssue-id: 4
 ---
 

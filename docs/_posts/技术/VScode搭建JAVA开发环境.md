@@ -1,9 +1,8 @@
 ---
-category: Java
+category: 技术
 tags:
   - vscode
   - 后端
-  - 环境搭建
   - Java
 date: 2020-01-12
 title: VScode搭建JAVA开发环境

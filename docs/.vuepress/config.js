@@ -1,8 +1,8 @@
 module.exports = {
   // 网站 Title
-  title: 'XiaoMuCOOL 博客',
+  title: 'XiaoMuの技术世界',
   // 网站描述
-  description: '小牧COOL的博客',
+  description: 'XiaoMuの技术世界',
   // 网站语言
   locales: {
     '/': {
@@ -156,7 +156,7 @@ module.exports = {
       poweredByTheme: false,
 
       // 添加自定义 footer (支持 HTML)
-      custom: 'Copyright &copy;2020 & Powered By <a href="https://xiaomucool.com" target="_blank">XiaoMuCOOL</a>',
+      custom: 'Copyright &copy;2022 & Powered By <a href="https://xiaomucool.com" target="_blank">小牧COOL</a>',
     },
 
     // 个人信息卡片相关设置 (可选)
@@ -178,7 +178,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/', exact: true },
       { text: '分类', link: '/posts/', exact: true },
-      { text: 'Github', link: 'https://github.com/XiaoMuCOOL/xiaomucool.github.io', exact: true },
+      { text: '联系', link: '/_posts/随笔/', exact: true },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
@@ -192,7 +192,7 @@ module.exports = {
 
     // 分页配置 (可选)
     pagination: {
-      perPage: 10,
+      perPage: 20,
     },
 
     // 默认页面（可选，默认全为 true）

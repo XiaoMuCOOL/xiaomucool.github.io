@@ -1,8 +1,8 @@
 ---
-category: 环境
+category: 运维
 tags:
   - window terminal
-  - 软件
+  - 教程
 date: 2020-07-31
 title: Windows Terminal 美化和使用
 vssue-id: 6
