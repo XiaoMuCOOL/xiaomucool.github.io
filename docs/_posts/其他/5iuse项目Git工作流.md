@@ -1,5 +1,5 @@
 ---
-category: 运维
+# category: 其他
 tags:
   - 项目
   - git

@@ -1,5 +1,5 @@
 ---
-category: 技术
+category: 编程
 tags:
   - vscode
   - 后端
