@@ -1,8 +1,8 @@
 module.exports = {
   // 网站 Title
-  title: 'XiaoMuCOOL 博客',
+  title: 'XiaoMuCOOL 🌏 世界',
   // 网站描述
-  description: '小牧COOL的博客',
+  description: 'XiaoMuCOOL 🌏 世界',
   // 网站语言
   locales: {
     '/': {
@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   // 使用的主题
-  theme: 'meteorlxy',
+  // theme: 'meteorlxy',
   // 主题配置
   themeConfig: {
     // 主题语言，参考下方 [主题语言] 章节
@@ -20,7 +20,7 @@ module.exports = {
       // 昵称
       nickname: '小牧COOL',
       // 个人简介 (支持 HTML)
-      description: '什么？你是万能的程序员！<br> <a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5tyQDAd" style="position:relative;top:8px;">QQ群: 215259343</a>',
+      description: '什么？不健身的程序员不是一个好的博主！',
 
       // 电子邮箱
       email: 'xiaomucool@bingblue.com',
@@ -29,7 +29,7 @@ module.exports = {
       location: '中国-上海',
 
       // 组织
-      organization: 'Bingblue .Inc',
+      organization: '滨清科技.Inc CTO',
 
       // 头像
       // 设置为外部链接
@@ -40,94 +40,88 @@ module.exports = {
 
       // 社交平台帐号信息
       sns: {
+        // QQ群 帐号和链接
+        qqgroup: {
+          account: '215259343',
+          link: 'https://jq.qq.com/?_wv=1027&k=5tyQDAd',
+        },
+
+        // 微信 帐号和链接
+        wechat: {
+          account: 'xiaomucool',
+          link: 'javascript:;',
+        },
+
+        // 公众号 帐号和链接
+        gongzhonghao: {
+          account: '滨清科技',
+          link: 'javascript:;',
+        },
+
+        // 新浪微博 帐号和链接
+        weibo: {
+          account: '@小-_-牧',
+          link: 'https://weibo.com/xiaomucool',
+        },
+
+        // 知乎 帐号和链接
+        zhihu: {
+          account: '小牧COOL',
+          link: 'https://www.zhihu.com/people/xiaomucool',
+        },
+
+        // 掘金 帐号和链接
+        juejin: {
+          account: '小牧COOL',
+          link: 'https://juejin.cn/user/2400989125279943',
+        },
+
+        // 简书 帐号和链接
+        jianshu: {
+          account: '小牧COOL',
+          link: 'https://www.jianshu.com/u/0f8eeb9fe72b',
+        },
+
+        // 思否 帐号和链接
+        sifou: {
+          account: '小牧COOL',
+          link: 'https://segmentfault.com/u/xiaomucool',
+        },
+        
         // Github 帐号和链接
         github: {
-          account: 'xiaomucool',
+          account: 'XiaoMuCOOL',
           link: 'https://github.com/xiaomucool',
         },
 
-        // Facebook 帐号和链接
-        // facebook: {
-        //   account: 'meteorlxy.cn',
-        //   link: 'https://www.facebook.com/meteorlxy.cn',
-        // },
-
-        // LinkedIn 帐号和链接
-        // linkedin: {
-        //   account: 'meteorlxy',
-        //   link: 'http://www.linkedin.com/in/meteorlxy',
-        // },
-
-        // Twitter 帐号和链接
-        // twitter: {
-        //   account: 'meteorlxy_cn',
-        //   link: 'https://twitter.com/meteorlxy_cn',
-        // },
-
-        // 新浪微博 帐号和链接
-        // weibo: {
-        //   account: '@焦炭君_Meteor',
-        //   link: 'https://weibo.com/u/2039655434',
-        // },
-
-        // 知乎 帐号和链接
-        // zhihu: {
-        //   account: 'meteorlxy.cn',
-        //   link: 'https://www.zhihu.com/people/meteorlxy.cn',
-        // },
-
-        // 豆瓣 帐号和链接
-        // douban: {
-        //   account: '159342708',
-        //   link: 'https://www.douban.com/people/159342708',
-        // },
-
-        // Reddit 帐号和链接
-        // reddit: {
-        //   account: 'meteorlxy',
-        //   link: 'https://www.reddit.com/user/meteorlxy',
-        // },
-
-        // Medium 帐号和链接
-        // medium: {
-        //   account: 'meteorlxy.cn',
-        //   link: 'https://medium.com/@meteorlxy.cn',
-        // },
-
-        // Instagram 帐号和链接
-        // instagram: {
-        //   account: 'meteorlxy.cn',
-        //   link: 'https://www.instagram.com/meteorlxy.cn',
-        // },
-
-        // GitLab 帐号和链接
-        // gitlab: {
-        //   account: 'meteorlxy',
-        //   link: 'https://gitlab.com/meteorlxy',
-        // },
-
-        // Bitbucket 帐号和链接
-        // bitbucket: {
-        //   account: 'meteorlxy',
-        //   link: 'https://bitbucket.org/meteorlxy',
-        // },
-
-        // Docker Hub 帐号和链接
-        docker: {
-          account: 'xiaomucool',
-          link: 'https://hub.docker.com/u/xiaomucool',
+        // 语雀 帐号和链接
+        yuque: {
+          account: '小牧COOL',
+          link: 'https://www.yuque.com/xiaomucool',
         },
 
+        // 我来 帐号和链接
+        wolai: {
+          account: 'xiaomucool',
+          link: 'https://www.wolai.com/xiaomucool/',
+        },
+        
         // CSDN 帐号和链接
-        // csdn: {
-        //   account: '',
-        //   link: 'https://www.csdn.net/',
+        csdn: {
+          account: '小牧COOL',
+          link: 'https://blog.csdn.net/a59769507',
+        },
+
+        // 微信群 帐号和链接
+        // wechatgroup: {
+        //   account: 'xiaomucool',
+        //   link: 'javascript:;',
         // },
 
-        // 掘金 帐号和链接
-        // juejin: {
-        //   account: 'meteorlxy',
-        //   link: 'https://juejin.im/user/5c6fa9dde51d453fcb7baf09',
+        // QQ 帐号和链接
+        // qq: {
+        //   account: '895355044',
+        //   link: 'javascript:;',
         // },
       },
     },
@@ -156,7 +150,7 @@ module.exports = {
       poweredByTheme: false,
 
       // 添加自定义 footer (支持 HTML)
-      custom: 'Copyright &copy;2020 & Powered By <a href="https://xiaomucool.com" target="_blank">XiaoMuCOOL</a>',
+      custom: 'Copyright &copy;2022 & Powered By <a href="https://xiaomucool.com" target="_blank">小牧COOL</a>',
     },
 
     // 个人信息卡片相关设置 (可选)
@@ -176,9 +170,9 @@ module.exports = {
 
     // 顶部导航栏内容
     nav: [
-      { text: '首页', link: '/', exact: true },
-      { text: '分类', link: '/posts/', exact: true },
-      { text: 'Github', link: 'https://github.com/XiaoMuCOOL/xiaomucool.github.io', exact: true },
+      { text: '🏠 首页', link: '/', exact: true },
+      { text: '🗂️ 分类', link: '/posts/', exact: true },
+      { text: '📔 随笔', link: '/随笔/年度计划安排', exact: true },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
@@ -192,7 +186,7 @@ module.exports = {
 
     // 分页配置 (可选)
     pagination: {
-      perPage: 10,
+      perPage: 20,
     },
 
     // 默认页面（可选，默认全为 true）
