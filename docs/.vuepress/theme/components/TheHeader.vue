@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import GeoPattern from 'geopattern'
 import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
 import TheHeaderNavbar from '@theme/components/TheHeaderNavbar.vue'
@@ -122,9 +123,7 @@ export default {
     },
 
     getTxt() {
-      fetch('https://v1.hitokoto.cn?c=i', {  method:'get' }).then(res => {
-        return res.json()
-      }).then(data => {
+      axios.get('https://v1.hitokoto.cn?c=i').then(({data}) => {
         this.txt = `${data.hitokoto}《${data.from}》`
       })
     }
