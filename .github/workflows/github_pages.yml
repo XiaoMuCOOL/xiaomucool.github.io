@@ -2,7 +2,7 @@ name: Github Pages
 on:
   push:
     branches:
-      - pages
+      - dev
 jobs:
   deploy:
     name: 部署到master分支
