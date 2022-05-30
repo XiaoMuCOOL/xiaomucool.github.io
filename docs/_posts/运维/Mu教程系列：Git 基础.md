@@ -4,7 +4,7 @@ tags:
   - 教程
   - git
 date: 2020-01-04
-permalink: /devlop/git
+permalink: /devlop/git.html
 title: Mu教程系列：Git 基础
 vssue-id: 4
 ---
