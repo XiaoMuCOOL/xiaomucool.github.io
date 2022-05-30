@@ -3,10 +3,10 @@ category: 运维
 tags:
   - 教程
   - github actions
-date: 2020-01-01
-title: Github Actions 教程
+date: 2020-01-05
+permalink: /运维/github-actions
+title: Mu教程系列：Github Actions 基础
 vssue-id: 2
-draft: false
 ---
 
 `Github Actions`是`GitHub`推出的持续集成服务（CI/CD），可以放弃`Jenkins`了，节省一台服务器。
