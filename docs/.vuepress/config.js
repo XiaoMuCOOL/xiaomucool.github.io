@@ -54,7 +54,7 @@ module.exports = {
 
         // 公众号 帐号和链接
         gongzhonghao: {
-          account: '滨清科技',
+          account: '小牧的技术世界',
           link: 'javascript:;',
         },
 
