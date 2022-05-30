@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker 教程（一）：初识 | XiaoMuCOOL 🌏 世界</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <meta name="description" content="XiaoMuCOOL 🌏 世界">
+    <link rel="preload" href="/assets/css/0.styles.ae034651.css" as="style"><link rel="preload" href="/assets/js/app.027300d2.js" as="script"><link rel="preload" href="/assets/js/7.c4d615b4.js" as="script"><link rel="preload" href="/assets/js/18.ab45385b.js" as="script"><link rel="prefetch" href="/assets/js/1.e9d515db.js"><link rel="prefetch" href="/assets/js/10.bc427504.js"><link rel="prefetch" href="/assets/js/11.4b5ca5c4.js"><link rel="prefetch" href="/assets/js/12.e75c1f80.js"><link rel="prefetch" href="/assets/js/13.4198a982.js"><link rel="prefetch" href="/assets/js/14.db07f419.js"><link rel="prefetch" href="/assets/js/15.8a192da7.js"><link rel="prefetch" href="/assets/js/16.7a979b06.js"><link rel="prefetch" href="/assets/js/17.2e979f13.js"><link rel="prefetch" href="/assets/js/19.a0a579df.js"><link rel="prefetch" href="/assets/js/20.9a1e0576.js"><link rel="prefetch" href="/assets/js/21.b9403fb4.js"><link rel="prefetch" href="/assets/js/22.4667de33.js"><link rel="prefetch" href="/assets/js/23.9c122c84.js"><link rel="prefetch" href="/assets/js/24.e683c195.js"><link rel="prefetch" href="/assets/js/25.50bd0ab3.js"><link rel="prefetch" href="/assets/js/26.5314e2bb.js"><link rel="prefetch" href="/assets/js/27.4964ec4d.js"><link rel="prefetch" href="/assets/js/28.0f8395d6.js"><link rel="prefetch" href="/assets/js/3.1e540404.js"><link rel="prefetch" href="/assets/js/4.f018efa2.js"><link rel="prefetch" href="/assets/js/5.bf64e820.js"><link rel="prefetch" href="/assets/js/6.ac1c3405.js"><link rel="prefetch" href="/assets/js/8.cdf4ef2b.js"><link rel="prefetch" href="/assets/js/9.6798f808.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ae034651.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-484dc084><div data-v-dca6e620 data-v-484dc084><nav class="navbar" data-v-dca6e620><div class="container" data-v-dca6e620><a href="/" class="router-link-active" data-v-dca6e620><span class="navbar-site-name" data-v-dca6e620>
+          XiaoMuCOOL 🌏 世界
+        </span></a> <div class="navbar-toggler" data-v-dca6e620><svg class="icon" style="font-size:1.2em;" data-v-dca6e620 data-v-dca6e620><title data-v-dca6e620 data-v-dca6e620>menu</title><use xlink:href="#icon-menu" data-v-dca6e620 data-v-dca6e620></use></svg></div> <div class="navbar-links" data-v-dca6e620><a href="/" class="navbar-link" data-v-dca6e620>
+            🏠 首页
+          </a><a href="/posts/" class="navbar-link" data-v-dca6e620>
+            🗂️ 分类
+          </a><a href="/随笔/年度计划安排" class="navbar-link" data-v-dca6e620>
+            📔 随笔
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-dca6e620></div></div> <div class="banner" data-v-5ad5ee22 data-v-484dc084 data-v-484dc084><div class="container" data-v-5ad5ee22><div class="center" data-v-5ad5ee22><h1 data-v-5ad5ee22 data-v-484dc084>
+          Docker 教程（一）：初识
+        </h1> <h2 data-v-5ad5ee22 data-v-484dc084></h2></div></div></div></header> <div class="container clearfix show-aside" data-v-e8c6d268 data-v-e8c6d268><main class="main" data-v-e8c6d268><div class="post" data-v-e8c6d268 data-v-e8c6d268><section class="post-meta main-div" data-v-1a01be4a><section class="post-date clearfix" data-v-1a01be4a><span class="create-date" data-v-1a01be4a>
+      发布时间 : 2022-05-30
+    </span> <span class="update-date" data-v-1a01be4a>
+      最后修改 : 2022-05-30
+    </span></section> <section class="post-links" data-v-1a01be4a><a href="/运维/window-terminal/" class="post-link" data-v-1a01be4a>
+      上一篇 : Mu教程系列：Windows Terminal 美化
+    </a> <a href="/posts/2020/01/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" class="post-link" data-v-1a01be4a>
+      下一篇 : 搭建个人博客
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>Docker相关的一些安装、命令、操作记录。</p> <h2 id="docker-基本概念"><a href="#docker-基本概念" class="header-anchor">#</a> Docker 基本概念</h2> <h3 id="windows-安装-docker"><a href="#windows-安装-docker" class="header-anchor">#</a> Windows 安装 Docker</h3> <ul><li><a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener noreferrer">下载<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://hub.docker.com/signup" target="_blank" rel="noopener noreferrer">注册<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>打开<code>CMD</code>或<code>Powershell</code>就可以愉快的玩耍Docker了</strong></p> <h3 id="ubuntu-安装-docker"><a href="#ubuntu-安装-docker" class="header-anchor">#</a> Ubuntu 安装 Docker</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>// Ubuntu 自带docker.io源
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> docker.io -y
+</code></pre></div><h3 id="常用命令"><a href="#常用命令" class="header-anchor">#</a> 常用命令</h3> <div class="language-cmd extra-class"><pre class="language-text"><code>// 基本
+docker version // 查看版本详情
+docker -v      // 查看版本简单版
+// 搜索
+docker search ubuntu
+// 拉取
+docker pull ubuntu:latest // tag：最新版
+docker images             // 查看本地镜像
+// 创建(类似安装系统)
+docker run -it -p 8080:8080 ubuntu /bin/bash  // -it表示打开并保持stdout，并分配一个终端（pseudo-tty）
+docker run -d -p 80:80 --name [myname] nginx
+// 退出
+exit                     // 容器关闭，状态为：Exit
+快捷键 ctrl+p ctrl+q     // 后台运行，状态为：Up
+docker ps -a             // 查看状态
+// 操作容器
+docker start CONTAINERID              // 启动
+docker stop CONTAINERID               // 停止
+docker restart CONTAINERID            // 重启
+docker attach CONTAINERID             // 进入
+docker exec -it CONTAINERID /bin/bash // 进入（如创建时未it）
+// 提交镜像到本地仓库
+docker commit -m &quot;msg&quot; -a &quot;Author&quot; CONTAINERID 用户名/仓库名:tag
+// 删除镜像
+docker rm CONTAINERID  // 必须先删除所有容器
+docker rmi IMAGESID    // 接着删除镜像
+// 提交镜像到hub
+docker push 用户名/仓库名:tag
+</code></pre></div><h3 id="dockerfile常用参数"><a href="#dockerfile常用参数" class="header-anchor">#</a> Dockerfile常用参数</h3> <div class="language-cmd extra-class"><pre class="language-text"><code>FROM        // 指定构建镜像的基础源镜像
+MAINTAINER  // 维护者的信息
+RUN         // 在当前镜像基础上执行指定命令
+CMD         // 启动容器时提供一个默认的命令执行选项
+EXPOSE      // 服务端容器对外映射的本地端口
+ENV         // 指定一个环节变量，会被后续RUN指令使用，并在容器运行时保留
+ADD         // 复制本地主机文件、目录或者远程文件URLS从并且添加到容器指定路径中，支持正则模糊匹配
+COPY        // 复制新文件或者目录从并且添加到容器指定路径中 
+VOLUME      // 创建一个可以从本地主机或其他容器挂载的挂载点
+WORKDIR     // 为后续的RUN、CMD、ENTRYPOINT指令配置工作目录。可以使  用多个WORKDIR指令，后续命令如果参数是相对路径，则会基于之前命令指  定的路径
+// 构建镜像
+docker build -t name 目录 // 当前目录用`.`表示
+</code></pre></div><h3 id="wsl相关问题"><a href="#wsl相关问题" class="header-anchor">#</a> WSL相关问题</h3> <p>打开<code>PowerShell</code>,运行：</p> <div class="language-cmd extra-class"><pre class="language-text"><code>ubuntu config --default-user root  // 默认root登录
+// 进入ubuntu系统，设置默认连接windows的守护进程
+vi ~/.bashrc                               // 打开
+export DOCKER_HOST=tcp://127.0.0.1:2375    // 最后一行添加
+source ~/.bashrc                           // 运行下
+</code></pre></div><h3 id="docker-compose-yml常用参数"><a href="#docker-compose-yml常用参数" class="header-anchor">#</a> docker-compose.yml常用参数</h3> <div class="language-cmd extra-class"><pre class="language-text"><code>version: &quot;3&quot;
+services:
+  web:                              # 自定义服务名叫web
+    image: username/repo:tag
+    deploy:
+      replicas: 5                   # 运行5个实例作为一个服务
+      resources:
+        limits:
+          cpus: &quot;0.1&quot;               # 每个实例最多使用10%CPU
+          memory: 50M               # 每个实例最多使用50MB的RAM
+      restart_policy:
+        condition: on-failure       # 如果容器出错，立即重启
+    ports:
+      - &quot;4000:80&quot;
+    networks:
+      - webnet                      # 负载平衡网络
+networks:
+  webnet:
+</code></pre></div><h3 id="swarm-常用命令"><a href="#swarm-常用命令" class="header-anchor">#</a> Swarm 常用命令</h3> <div class="language-cmd extra-class"><pre class="language-text"><code>// 基本
+docker swarm init                                // 初始化swarm
+docker stack deploy -c docker-compose.yml name   // 部署新堆栈或更新现有堆栈
+docker stack ls                                 // 列出现有堆栈
+docker service ls                               // 查看服务
+docker service ps name                          // 查看实例
+docker container ls -q                          // 查看所有容器id
+docker stack rm name                            // 退出程序
+docker swarm leave --force                      // 退出swarm
+systemctl restart docker                        // 重启swarm
+</code></pre></div><h3 id="使用ui工具-portainer"><a href="#使用ui工具-portainer" class="header-anchor">#</a> 使用UI工具 - Portainer</h3> <div class="language-cmd extra-class"><pre class="language-text"><code># 初始化 swarm 集群  
+docker swarm init --advertise-addr [IP地址] 
+# 创建 portainer 挂载目录
+mkdir -p /home/portainer
+# 以 swarm service 建立 portainer 管理 
+docker service create \
+--name portainer \
+--publish 9000:9000 \
+--replicas=1 \
+--constraint 'node.role == manager' \
+--mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
+--mount type=bind,src=//home/portainer,dst=/data \
+portainer/portainer-ce \
+-H unix:///var/run/docker.sock
+</code></pre></div><h3 id="使用阿里云镜像库"><a href="#使用阿里云镜像库" class="header-anchor">#</a> 使用阿里云镜像库</h3> <div class="language-cmd extra-class"><pre class="language-text"><code># 登陆
+docker login --username=master@bingblue.com registry.cn-shanghai.aliyuncs.com
+# 提交
+docker tag [ImageId] registry.cn-shanghai.aliyuncs.com/bingblue/[镜像名]:[镜像版本号]
+docker push registry.cn-shanghai.aliyuncs.com/bingblue/[镜像名]:[镜像版本号]
+</code></pre></div><h3 id="docker-images-版本区分"><a href="#docker-images-版本区分" class="header-anchor">#</a> Docker images 版本区分</h3> <ul><li><code>alpine</code>: linux发行版,只有5M,几乎无软件仓库支持</li> <li><code>stretch</code>: Debian 9 的代号,2017年发行</li> <li><code>jessie</code>: Debian 8 的代号,2015年发行</li> <li><code>wheezy</code>: Debian 7 的代号,2013年发行</li> <li><code>slim</code>: 瘦身版,比如<code>xxx-jessie-slim</code>就是基于<code>jessie</code>的瘦身版</li> <li><code>perl</code>: nginx支持perl模块的版本</li> <li><code>mainline</code>: nginx目前主力在做的版本,可以说是开发版</li> <li><code>stable</code>: 稳定版</li> <li><code>chakracore</code>: 基于Edge浏览器的<code>ChakraCore</code>引擎的node版本</li></ul> <p><strong>总结：推荐使用<code>alpine</code>，其次推荐<code>slim</code></strong></p> <h2 id="实战-项目部署"><a href="#实战-项目部署" class="header-anchor">#</a> 实战：项目部署</h2> <h3 id="一、编写docker-compose-yml文件"><a href="#一、编写docker-compose-yml文件" class="header-anchor">#</a> 一、编写docker-compose.yml文件</h3> <div class="language-compose extra-class"><pre class="language-text"><code>version: '3.6'
+services:
+  # nginx 略...
+  # mysql 略...
+  # xbjh_admin 略...
+  # xbjh 略...
+networks:
+  bingblue:
+    driver: overlay
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.88.0.0/16
+</code></pre></div><p><strong>然后上传到服务器，目录<code>/root/yml/docker-compose.yml</code></strong></p> <h3 id="二、部署"><a href="#二、部署" class="header-anchor">#</a> 二、部署</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 初始化Swarm集群</span>
+<span class="token function">docker</span> swarm init --advertise-addr <span class="token punctuation">[</span>IP地址<span class="token punctuation">]</span>
+<span class="token comment"># 创建目录</span>
+<span class="token function">mkdir</span> nginx             // 并在此目录下上传Nginx配置文件 default.conf
+<span class="token function">mkdir</span> mysql
+<span class="token function">mkdir</span> xbjh_admin
+<span class="token function">mkdir</span> xbjh_admin/file
+<span class="token function">mkdir</span> xbjh_admin/log
+<span class="token comment"># 登陆阿里云私有库账号</span>
+<span class="token function">docker</span> login --username<span class="token operator">=</span>master@bingblue.com registry.cn-shanghai.aliyuncs.com
+<span class="token comment"># 进入yml目录</span>
+<span class="token builtin class-name">cd</span> /root/yml
+<span class="token comment"># 部署新堆栈或更新现有堆栈</span>
+<span class="token function">docker</span> stack deploy -c docker-compose.yml <span class="token punctuation">[</span>堆栈名称<span class="token punctuation">]</span> --with-registry-auth
+</code></pre></div><h3 id="三、项目更新"><a href="#三、项目更新" class="header-anchor">#</a> 三、项目更新</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 修改docker-compose.yml并上传</span>
+<span class="token builtin class-name">cd</span> /root/yml
+<span class="token comment"># 更新现有堆栈</span>
+<span class="token function">docker</span> stack deploy -c docker-compose.yml xbjh --with-registry-auth
+<span class="token comment"># 单独重启某个Service</span>
+<span class="token function">docker</span> <span class="token function">service</span> update --force <span class="token punctuation">[</span>Service ID<span class="token punctuation">]</span>
+</code></pre></div><h3 id="四、注意事项"><a href="#四、注意事项" class="header-anchor">#</a> 四、注意事项</h3> <ul><li>✅ 记得阿里云配置安全组入方向规则</li> <li>✅ 配置HTTPS和CDN时要设置: <code>协议跟随回源</code></li></ul></div></article> <section class="post-meta main-div" data-v-1a01be4a><section class="post-date clearfix" data-v-1a01be4a><span class="create-date" data-v-1a01be4a>
+      发布时间 : 2022-05-30
+    </span> <span class="update-date" data-v-1a01be4a>
+      最后修改 : 2022-05-30
+    </span></section> <section class="post-links" data-v-1a01be4a><a href="/运维/window-terminal/" class="post-link" data-v-1a01be4a>
+      上一篇 : Mu教程系列：Windows Terminal 美化
+    </a> <a href="/posts/2020/01/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html" class="post-link" data-v-1a01be4a>
+      下一篇 : 搭建个人博客
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-e8c6d268><div class="info-card main-div" data-v-66e2797a data-v-e8c6d268><div class="info-card-header" data-v-66e2797a><img src="/img/avatar.jpg" alt="小牧COOL" class="info-avatar" data-v-66e2797a></div> <div class="info-card-body" data-v-66e2797a><section class="info-nickname" data-v-66e2797a>
+      小牧COOL
+    </section> <section class="info-desc" data-v-66e2797a>什么？不健身的程序员不是一个好的博主！</section> <section class="info-contact" data-v-66e2797a><section data-v-66e2797a><span title="中国-上海" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>中国-上海</title><use xlink:href="#icon-location" data-v-66e2797a data-v-66e2797a></use></svg><span class="info-text" data-v-66e2797a data-v-66e2797a>
+          中国-上海
+        </span></span></section> <section data-v-66e2797a><span title="滨清科技.Inc CTO" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>滨清科技.Inc CTO</title><use xlink:href="#icon-organization" data-v-66e2797a data-v-66e2797a></use></svg><span class="info-text" data-v-66e2797a data-v-66e2797a>
+          滨清科技.Inc CTO
+        </span></span></section> <section data-v-66e2797a><a href="mailto:xiaomucool@bingblue.com" title="xiaomucool@bingblue.com" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>xiaomucool@bingblue.com</title><use xlink:href="#icon-email" data-v-66e2797a data-v-66e2797a></use></svg><span class="info-text" data-v-66e2797a data-v-66e2797a>
+          xiaomucool@bingblue.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-66e2797a><section class="info-sns clearfix" data-v-66e2797a><a href="https://jq.qq.com/?_wv=1027&amp;k=5tyQDAd" target="_blank" class="sns-link" data-v-66e2797a><span title="QQ群: 215259343" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>QQ群: 215259343</title><use xlink:href="#icon-qqgroup" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="javascript:;" target="" class="sns-link" data-v-66e2797a><span title="微信: xiaomucool" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>微信: xiaomucool</title><use xlink:href="#icon-wechat" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="javascript:;" target="" class="sns-link" data-v-66e2797a><span title="微信公众号: 滨清科技" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>微信公众号: 滨清科技</title><use xlink:href="#icon-gongzhonghao" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://weibo.com/xiaomucool" target="_blank" class="sns-link" data-v-66e2797a><span title="新浪微博: @小-_-牧" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>新浪微博: @小-_-牧</title><use xlink:href="#icon-weibo" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://www.zhihu.com/people/xiaomucool" target="_blank" class="sns-link" data-v-66e2797a><span title="知乎: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>知乎: 小牧COOL</title><use xlink:href="#icon-zhihu" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://juejin.cn/user/2400989125279943" target="_blank" class="sns-link" data-v-66e2797a><span title="掘金: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>掘金: 小牧COOL</title><use xlink:href="#icon-juejin" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://www.jianshu.com/u/0f8eeb9fe72b" target="_blank" class="sns-link" data-v-66e2797a><span title="简书: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>简书: 小牧COOL</title><use xlink:href="#icon-jianshu" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://segmentfault.com/u/xiaomucool" target="_blank" class="sns-link" data-v-66e2797a><span title="思否: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>思否: 小牧COOL</title><use xlink:href="#icon-sifou" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://github.com/xiaomucool" target="_blank" class="sns-link" data-v-66e2797a><span title="GitHub: XiaoMuCOOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>GitHub: XiaoMuCOOL</title><use xlink:href="#icon-github" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://www.yuque.com/xiaomucool" target="_blank" class="sns-link" data-v-66e2797a><span title="语雀: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>语雀: 小牧COOL</title><use xlink:href="#icon-yuque" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://www.wolai.com/xiaomucool/" target="_blank" class="sns-link" data-v-66e2797a><span title="我来: xiaomucool" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>我来: xiaomucool</title><use xlink:href="#icon-wolai" data-v-66e2797a data-v-66e2797a></use></svg></span></a><a href="https://blog.csdn.net/a59769507" target="_blank" class="sns-link" data-v-66e2797a><span title="CSDN: 小牧COOL" class="sns-icon" data-v-66e2797a data-v-66e2797a><svg class="icon" style="font-size:1.5em;" data-v-66e2797a data-v-66e2797a><title data-v-66e2797a data-v-66e2797a>CSDN: 小牧COOL</title><use xlink:href="#icon-csdn" data-v-66e2797a data-v-66e2797a></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-e8c6d268><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/运维/docker1/#docker-基本概念">Docker 基本概念</a><ul><li><a href="/运维/docker1/#windows-安装-docker">Windows 安装 Docker</a></li><li><a href="/运维/docker1/#ubuntu-安装-docker">Ubuntu 安装 Docker</a></li><li><a href="/运维/docker1/#常用命令">常用命令</a></li><li><a href="/运维/docker1/#dockerfile常用参数">Dockerfile常用参数</a></li><li><a href="/运维/docker1/#wsl相关问题">WSL相关问题</a></li><li><a href="/运维/docker1/#docker-compose-yml常用参数">docker-compose.yml常用参数</a></li><li><a href="/运维/docker1/#swarm-常用命令">Swarm 常用命令</a></li><li><a href="/运维/docker1/#使用ui工具-portainer">使用UI工具 - Portainer</a></li><li><a href="/运维/docker1/#使用阿里云镜像库">使用阿里云镜像库</a></li><li><a href="/运维/docker1/#docker-images-版本区分">Docker images 版本区分</a></li></ul></li><li><a href="/运维/docker1/#实战-项目部署">实战：项目部署</a><ul><li><a href="/运维/docker1/#一、编写docker-compose-yml文件">一、编写docker-compose.yml文件</a></li><li><a href="/运维/docker1/#二、部署">二、部署</a></li><li><a href="/运维/docker1/#三、项目更新">三、项目更新</a></li><li><a href="/运维/docker1/#四、注意事项">四、注意事项</a></li></ul></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/运维/docker1/#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-0068f5f7><p class="footer-sns-links" data-v-0068f5f7><a href="https://jq.qq.com/?_wv=1027&amp;k=5tyQDAd" target="_blank" class="sns-link" data-v-0068f5f7><span title="QQ群: 215259343" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>QQ群: 215259343</title><use xlink:href="#icon-qqgroup" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="javascript:;" target="_blank" class="sns-link" data-v-0068f5f7><span title="微信: xiaomucool" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>微信: xiaomucool</title><use xlink:href="#icon-wechat" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="javascript:;" target="_blank" class="sns-link" data-v-0068f5f7><span title="微信公众号: 滨清科技" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>微信公众号: 滨清科技</title><use xlink:href="#icon-gongzhonghao" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://weibo.com/xiaomucool" target="_blank" class="sns-link" data-v-0068f5f7><span title="新浪微博: @小-_-牧" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>新浪微博: @小-_-牧</title><use xlink:href="#icon-weibo" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://www.zhihu.com/people/xiaomucool" target="_blank" class="sns-link" data-v-0068f5f7><span title="知乎: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>知乎: 小牧COOL</title><use xlink:href="#icon-zhihu" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://juejin.cn/user/2400989125279943" target="_blank" class="sns-link" data-v-0068f5f7><span title="掘金: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>掘金: 小牧COOL</title><use xlink:href="#icon-juejin" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://www.jianshu.com/u/0f8eeb9fe72b" target="_blank" class="sns-link" data-v-0068f5f7><span title="简书: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>简书: 小牧COOL</title><use xlink:href="#icon-jianshu" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://segmentfault.com/u/xiaomucool" target="_blank" class="sns-link" data-v-0068f5f7><span title="思否: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>思否: 小牧COOL</title><use xlink:href="#icon-sifou" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://github.com/xiaomucool" target="_blank" class="sns-link" data-v-0068f5f7><span title="GitHub: XiaoMuCOOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>GitHub: XiaoMuCOOL</title><use xlink:href="#icon-github" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://www.yuque.com/xiaomucool" target="_blank" class="sns-link" data-v-0068f5f7><span title="语雀: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>语雀: 小牧COOL</title><use xlink:href="#icon-yuque" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://www.wolai.com/xiaomucool/" target="_blank" class="sns-link" data-v-0068f5f7><span title="我来: xiaomucool" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>我来: xiaomucool</title><use xlink:href="#icon-wolai" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a><a href="https://blog.csdn.net/a59769507" target="_blank" class="sns-link" data-v-0068f5f7><span title="CSDN: 小牧COOL" class="sns-icon" data-v-0068f5f7 data-v-0068f5f7><svg class="icon" style="font-size:25px;" data-v-0068f5f7 data-v-0068f5f7><title data-v-0068f5f7 data-v-0068f5f7>CSDN: 小牧COOL</title><use xlink:href="#icon-csdn" data-v-0068f5f7 data-v-0068f5f7></use></svg></span></a></p> <!----> <p class="footer-text" data-v-0068f5f7>Copyright &copy;2022 & Powered By <a href="https://xiaomucool.com" target="_blank">小牧COOL</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.027300d2.js" defer></script><script src="/assets/js/7.c4d615b4.js" defer></script><script src="/assets/js/18.ab45385b.js" defer></script>
+  </body>
+</html>
