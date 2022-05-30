@@ -4,7 +4,7 @@ tags:
   - 教程
   - docker
 date: 2022-05-30
-permalink: /运维/docker1
+permalink: /devlop/docker1
 title: Docker 教程（一）：初识
 vssue-title: Docker 教程
 vssue-id: 7
