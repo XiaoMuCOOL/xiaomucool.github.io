@@ -4,7 +4,7 @@ tags:
   - 教程
   - Linux
 date: 2020-01-03
-permalink: /devlop/linux
+permalink: /devlop/linux.html
 title: Mu教程系列：Linux 基础
 vssue-title: Mu教程系列
 vssue-id: 8
