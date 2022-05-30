@@ -242,8 +242,8 @@ docker service update --force [Service ID]
 
 ### 四、注意事项
 
-- :white_check_mark: 记得阿里云配置安全组入方向规则
-- :white_check_mark: 配置HTTPS和CDN时要设置: `协议跟随回源`
+- ✅ 记得阿里云配置安全组入方向规则
+- ✅ 配置HTTPS和CDN时要设置: `协议跟随回源`
 
 
 [1]:https://hub.docker.com/editions/community/docker-ce-desktop-windows
