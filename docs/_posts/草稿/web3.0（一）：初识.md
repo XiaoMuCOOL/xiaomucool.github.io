@@ -5,16 +5,18 @@ tags:
   - 区块链
 date: 2022-06-01
 title: Web3.0（一）：初识
-# vssue-id: 1
+vssue-title: Web3.0
+vssue-id: 8
 draft: true
 ---
 
-摘要
+Web 3.0是未来发展的方向之一，尽早了解下吧。
 
 <!-- more -->
 
-## 标题
+## 基本概念
 
-::: tip 注意
-:loudspeaker: 提示
-:::
+- **区块链**：
+- **DAO**：
+- **区块链**：
+- **区块链**：
