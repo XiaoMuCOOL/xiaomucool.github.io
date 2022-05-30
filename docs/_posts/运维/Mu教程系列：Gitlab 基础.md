@@ -4,7 +4,7 @@ tags:
   - 教程
   - gitlab
 date: 2020-01-06
-permalink: /devlop/gitlab
+permalink: /devlop/gitlab.html
 title: Mu教程系列：Gitlab 基础
 vssue-title: Mu教程系列
 vssue-id: 8
