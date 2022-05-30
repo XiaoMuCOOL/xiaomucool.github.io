@@ -4,7 +4,7 @@ tags:
   - 教程
   - github actions
 date: 2020-01-05
-permalink: /运维/github-actions
+permalink: /devlop/github-actions
 title: Mu教程系列：Github Actions 基础
 vssue-id: 2
 ---

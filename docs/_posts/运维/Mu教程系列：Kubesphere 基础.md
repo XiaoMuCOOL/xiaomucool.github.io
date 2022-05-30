@@ -4,7 +4,7 @@ tags:
   - 教程
   - Kubesphere
 date: 2020-01-02
-permalink: /运维/kubesphere
+permalink: /devlop/kubesphere
 title: Mu教程系列：Kubesphere 基础
 vssue-title: Mu教程系列
 vssue-id: 8

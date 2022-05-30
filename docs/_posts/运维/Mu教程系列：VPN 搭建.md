@@ -5,7 +5,7 @@ tags:
   - outline
   - shadowsocks
 date: 2020-01-01
-permalink: /运维/vpn
+permalink: /devlop/vpn
 title: Mu教程系列：VPN 搭建
 vssue-title: Mu教程系列
 vssue-id: 8

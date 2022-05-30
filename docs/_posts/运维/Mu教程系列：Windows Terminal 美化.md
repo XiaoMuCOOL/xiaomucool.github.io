@@ -4,7 +4,7 @@ tags:
   - window terminal
   - 教程
 date: 2020-07-31
-permalink: /运维/window-terminal
+permalink: /devlop/window-terminal
 title: Mu教程系列：Windows Terminal 美化
 vssue-id: 6
 ---
