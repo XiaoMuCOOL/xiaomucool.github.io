@@ -32,15 +32,21 @@ $ pwd              // 打印当前路径
 $ mv folderName1 folderName2           // 重命名
 `注：folderName2存在则覆盖，文件名是folderName1，否则重命名为folderName2，同时移动所有文件`
 $ cp -r /tmp/a /root/a                 // 复制文件
+
+// 查看系统状况
 $ ps -aux | grep name                  // 查看进程
 $ netstat -apn                         // 查看所有端口
 $ netstat -apn | grep 8080             // 查看精确端口
 $ kill 32102                           // 关闭进程(进程PID)
 $ which nohup                          // 查看命令绝对路径
 $ nohup xxxx &                         // 后台运行
+
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
 $ cat /dev/null > /opt/git/error.log   // 清空文件
+$ du -sh /var/lib/docker/              // 查看文件夹大小
+$ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
+
 ```
 
 ## VI基本命令
