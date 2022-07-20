@@ -43,8 +43,11 @@ $ nohup xxxx &                         // 后台运行
 
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
+$ find / -iname *.txt                  // 查找以.txt结尾的文件，不许分大小
+$ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文件
+$ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt
 $ cat /dev/null > /opt/git/error.log   // 清空文件
-$ du -sh /var/lib/docker/              // 查看文件夹大小
+$ du -sh /var/lib/docker/containers/   // 查看文件夹大小
 $ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
 
 ```
