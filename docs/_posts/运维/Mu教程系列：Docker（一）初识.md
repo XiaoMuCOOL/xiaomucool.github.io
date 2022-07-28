@@ -142,26 +142,6 @@ systemctl restart docker                        // 重启swarm
 
 ```
 
-### 使用UI工具 - Portainer
-```cmd
-# 初始化 swarm 集群  
-docker swarm init --advertise-addr [IP地址] 
-
-# 创建 portainer 挂载目录
-mkdir -p /home/portainer
-
-# 以 swarm service 建立 portainer 管理 
-docker service create \
---name portainer \
---publish 9000:9000 \
---replicas=1 \
---constraint 'node.role == manager' \
---mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
---mount type=bind,src=//home/portainer,dst=/data \
-portainer/portainer-ce \
--H unix:///var/run/docker.sock
-```
-
 ### 使用阿里云镜像库
 ```cmd
 # 登陆
