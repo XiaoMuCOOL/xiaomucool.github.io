@@ -43,12 +43,22 @@ $ nohup xxxx &                         // 后台运行
 
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
-$ find / -iname *.txt                  // 查找以.txt结尾的文件，不许分大小
+$ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分大小
 $ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文件
 $ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt
 $ cat /dev/null > /opt/git/error.log   // 清空文件
 $ du -sh /var/lib/docker/containers/   // 查看文件夹大小
 $ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
+
+# 压缩
+$ tar -cvf [文件名].tar [文件目录]       // 压缩成.tar格式,压缩率最低,速度最快
+$ tar -xvf [文件名].tar -C [文件目录]    // 解压.tar文件到指定目录,目录必须存在
+
+$ tar -zcvf [文件名].gz [文件目录]       // 压缩成.gz格式,压缩率适中
+$ tar -zxvf [文件名].gz -C [文件目录]    // 解压.gz文件到指定目录,目录必须存在
+
+$ tar -jcvf [文件名].bz2 [文件目录]      // 压缩成.bz2格式,压缩率最高,速度最慢
+$ tar -jxvf [文件名].bz2 -C [文件目录]   // 解压.bz2文件到指定目录,目录必须存在
 
 ```
 
