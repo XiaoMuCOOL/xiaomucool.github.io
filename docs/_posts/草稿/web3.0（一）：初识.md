@@ -6,14 +6,15 @@ tags:
 date: 2022-06-01
 title: Web3.0（一）：初识
 vssue-title: Web3.0
-vssue-id: 8
+vssue-id: 9
 draft: true
 ---
 
 Web 3.0是未来发展的方向之一，尽早了解下吧。
 
 <!-- more -->
-
+## 什么是 Web 3.0
+// TODO
 ## 基本概念
 
 - **区块链**：
