@@ -61,7 +61,7 @@ $ tar -jcvf [文件名].bz2 [文件目录]      // 压缩成.bz2格式,压缩率
 $ tar -jxvf [文件名].bz2 -C [文件目录]   // 解压.bz2文件到指定目录,目录必须存在
 
 # 传输文件
-$ sshpass -p scp /home/a.txt root@192.168.0.10:/home/  // 传输本服务器a.txt文件到远程服务器的home 文件夹下，-r 参数传输文件夹，-v 参数显示详情
+$ scp a.txt root@192.168.0.10:/home/  // 传输本服务器a.txt文件到远程服务器的home文件夹下，-r 参数传输文件夹，-v 参数显示详情
 
 # 下载ftp文件
 $ wget -b -t 5 ftp://root:xxx@47.103.81.123/home/mysql-20220727.tar.gz
