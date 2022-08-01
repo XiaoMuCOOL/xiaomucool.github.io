@@ -5,7 +5,7 @@ tags:
   - docker
 date: 2022-05-30
 permalink: /devlop/docker1.html
-title: Docker 教程（一）：初识
+title: Mu教程系列：Docker（一）初识
 vssue-title: Docker 教程
 vssue-id: 7
 ---
@@ -142,26 +142,6 @@ systemctl restart docker                        // 重启swarm
 
 ```
 
-### 使用UI工具 - Portainer
-```cmd
-# 初始化 swarm 集群  
-docker swarm init --advertise-addr [IP地址] 
-
-# 创建 portainer 挂载目录
-mkdir -p /home/portainer
-
-# 以 swarm service 建立 portainer 管理 
-docker service create \
---name portainer \
---publish 9000:9000 \
---replicas=1 \
---constraint 'node.role == manager' \
---mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
---mount type=bind,src=//home/portainer,dst=/data \
-portainer/portainer-ce \
--H unix:///var/run/docker.sock
-```
-
 ### 使用阿里云镜像库
 ```cmd
 # 登陆
@@ -242,8 +222,8 @@ docker service update --force [Service ID]
 
 ### 四、注意事项
 
-- :white_check_mark: 记得阿里云配置安全组入方向规则
-- :white_check_mark: 配置HTTPS和CDN时要设置: `协议跟随回源`
+- ✅ 记得阿里云配置安全组入方向规则
+- ✅ 配置HTTPS和CDN时要设置: `协议跟随回源`
 
 
 [1]:https://hub.docker.com/editions/community/docker-ce-desktop-windows
