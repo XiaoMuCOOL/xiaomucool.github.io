@@ -17,7 +17,36 @@ vssue-id: 8
 
 ## 删除阿里云云盾、安骑士等安全组件
 
-不删除可能有被封 IP 风险，所以自己百度下如何删除吧，可参考[此文章][6]。
+不删除可能有被封 IP 风险，所以自己百度下如何删除吧，也可参考此操作。
+```shell
+# 卸载阿里云盾
+wget http://update.aegis.aliyun.com/download/uninstall.sh
+chmod +x uninstall.sh
+./uninstall.sh
+# 卸载阿里云安骑士
+wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+chmod +x quartz_uninstall.sh
+./quartz_uninstall.sh
+# 清理阿里云文件
+pkill aliyun-service
+rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service /usr/local/aegis*
+
+# 查看是否还存在阿里云服务
+ps -ef | grep -v grep | grep -i aliyun-service
+
+# 屏蔽云盾IP
+iptables -I INPUT -s 140.205.201.0/28 -j DROP
+iptables -I INPUT -s 140.205.201.16/29 -j DROP
+iptables -I INPUT -s 140.205.201.32/28 -j DROP
+iptables -I INPUT -s 140.205.225.192/29 -j DROP
+iptables -I INPUT -s 140.205.225.200/30 -j DROP
+iptables -I INPUT -s 140.205.225.184/29 -j DROP
+iptables -I INPUT -s 140.205.225.183/32 -j DROP
+iptables -I INPUT -s 140.205.225.206/32 -j DROP
+iptables -I INPUT -s 140.205.225.205/32 -j DROP
+iptables -I INPUT -s 140.205.225.195/32 -j DROP
+iptables -I INPUT -s 140.205.225.204/32 -j DROP
+```
 
 ## 安装docker
 ```shell
