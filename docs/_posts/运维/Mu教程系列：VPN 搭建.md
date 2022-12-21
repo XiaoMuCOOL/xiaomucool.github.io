@@ -20,16 +20,13 @@ vssue-id: 8
 不删除可能有被封 IP 风险，所以自己百度下如何删除吧，也可参考此操作。
 ```shell
 # 卸载阿里云盾
-wget http://update.aegis.aliyun.com/download/uninstall.sh
-chmod +x uninstall.sh
-./uninstall.sh
+curl -sSL http://update.aegis.aliyun.com/download/uninstall.sh | sudo bash
+
 # 卸载阿里云安骑士
-wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
-chmod +x quartz_uninstall.sh
-./quartz_uninstall.sh
+curl -sSL http://update.aegis.aliyun.com/download/quartz_uninstall.sh | sudo bash
 # 清理阿里云文件
 pkill aliyun-service
-rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service /usr/local/aegis*
+rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service /lib/systemd/system/aliyun.service /usr/local/aegis*
 
 # 查看是否还存在阿里云服务
 ps -ef | grep -v grep | grep -i aliyun-service
