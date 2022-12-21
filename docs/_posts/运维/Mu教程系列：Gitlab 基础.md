@@ -78,7 +78,7 @@ docker  run --rm -it gitlab/gitlab-runner register -n \
 `/home/gitlab-runner/config/config.toml`
 
 ```YML
-concurrent = 1
+concurrent = 4      # 并发运行数量，建议设置为CPU数量
 check_interval = 0
 
 [session_server]
