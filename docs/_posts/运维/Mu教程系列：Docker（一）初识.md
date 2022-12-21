@@ -26,6 +26,8 @@ Docker相关的一些安装、命令、操作记录。
 ### Ubuntu 安装 Docker
 
 ```shell
+// 更新仓库源
+sudo apt update
 // Ubuntu 自带docker.io源
 sudo apt install docker.io -y
 ```

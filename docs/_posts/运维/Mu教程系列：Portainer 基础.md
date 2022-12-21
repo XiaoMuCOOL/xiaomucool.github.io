@@ -72,5 +72,15 @@ docker service create \
 
 然后点击 `+ Add environment` 按钮就添加成功了。
 
+
+可能会遇到`rpc error: code = Unknown desc = warning: incomplete log stream.`问题，是因为swarm证书到期了。
+
+```shell
+docker swarm update --cert-expiry 867240h0m0s
+docker swarm ca --rotate | openssl x509 -text -noout
+# 查看 docker 信息
+docker system info
+```
+
 [0]:http://www.tensorfly.cn/tfdoc/get_started/os_setup.html
 [1]:http://www.nginx.cn/nginx-how-to
