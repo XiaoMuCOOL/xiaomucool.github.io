@@ -38,7 +38,7 @@ gitlab_rails['gitlab_shell_ssh_port'] = 22 # 此端口是run时22端口映射的
 docker restart gitlab
 ```
 
-gitlab 用户名:root  初始密码：在config里，Weijin@Root
+gitlab 用户名:root  初始密码：在config里
 
 ```shell
 docker run -d  -p 443:443 -p 80:80 -p 222:22 --name gitlab-ce --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
