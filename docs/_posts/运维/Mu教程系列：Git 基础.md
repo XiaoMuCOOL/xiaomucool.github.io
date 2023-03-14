@@ -47,13 +47,23 @@ Git相关的一些操作记录。
 重构：更新用户模块导出功能
 ```
 
+## 不要commit信息
+
+```git
+# 使用git创建一个没有commit信息的空分支
+$ git checkout --orphan branch_name
+
+# 合并时候没有commit信息
+$ git merge branch_name --squash
+```
+
 
 ## 稀疏检出
 
 稀疏检出：只检出你配置的文件夹。
 
 ```git
-git config core.sparseCheckout true
+$ git config core.sparseCheckout true
 echo "document/" >> .git/info/sparse-checkout
 ```
 
