@@ -47,6 +47,7 @@ $ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分
 $ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文件
 $ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt
 $ cat /dev/null > /opt/git/error.log   // 清空文件
+$ echo > /opt/git/error.log            // 清空文件
 $ du -sh /var/lib/docker/containers/   // 查看文件夹大小
 $ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
 
@@ -59,9 +60,13 @@ $ tar -zxvf [文件名].gz -C [文件目录]    // 解压.gz文件到指定目�
 
 $ tar -jcvf [文件名].bz2 [文件目录]      // 压缩成.bz2格式,压缩率最高,速度最慢
 $ tar -jxvf [文件名].bz2 -C [文件目录]   // 解压.bz2文件到指定目录,目录必须存在
+$ tar -jcvf app.bz2 -C /home/ app      // 压缩app文件夹
+$ tar -jxvf app.bz2 -C /home/          // 压缩app文件夹到/home文件夹下
+
+$ tar -jcvf example.bz2 example --exclude=example/temp // 不包含temp 文件夹
 
 # 传输文件
-$ scp home.bz2 root@192.168.0.10:/home/  // 传输本服务器home.bz2文件到远程服务器的/home文件夹下，-r 参数传输文件夹，-v 参数显示详情
+$ scp home.bz2 root@1.13.8.160:/home/  // 传输本服务器home.bz2文件到远程服务器的/home文件夹下，-r 参数传输文件夹，-v 参数显示详情
 
 # 下载ftp文件
 $ wget -b -t 5 ftp://root:xxx@47.103.81.123/home/mysql-20220727.tar.gz
