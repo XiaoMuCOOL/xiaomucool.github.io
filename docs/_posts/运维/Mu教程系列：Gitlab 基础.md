@@ -21,7 +21,7 @@ sudo apt install docker.io -y // 安装docker
 
 docker pull gitlab/gitlab-ee:latest  // 拉取镜像
 
-docker run -d  -p 443:443 -p 80:80 -p 22:22 --name gitlab --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ee
+docker run -d  -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ee:latest
 ```
 gitlab结果：`6e6b93f21e379e40a50a2468025d10d82067d9c0a6635ac0fe1090fc59fd4c4b`
 
@@ -41,7 +41,7 @@ docker restart gitlab
 gitlab 用户名:root  初始密码：在config里
 
 ```shell
-docker run -d  -p 443:443 -p 80:80 -p 222:22 --name gitlab-ce --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
+docker run -d  -p 443:443 -p 80:80 -p 222:22 --name gitlab-ce --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest
 ```
 结果：`3125c038a09574b76a390dcda2a895b2f2402b7b78b5451891ece17358a1b510`
 
@@ -70,7 +70,7 @@ docker  run --rm -it gitlab/gitlab-runner register -n \
        --docker-volumes /home/gitlab-runner/.npm:/root/.npm \
        --docker-volumes /home/gitlab-runner/config:/etc/gitlab-runner \
        --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
-       --description "docker镜像saas-dev服务器"
+       --description "docker镜像saas-prod-elk2服务器"
 ```
 
 # 辣鸡runner，配置要写死docker版本，不然哭死你
@@ -87,7 +87,7 @@ check_interval = 0
 [[runners]]
   name = "docker镜像saas-dev服务器"
   url = "http://47.103.58.85"
-  token = "Czy9o_uDiect-k4UMF-6"
+  token = "tsiKxKgEm648JnzaSSMz"
   executor = "docker"
   [runners.custom_build_dir]
   [runners.cache]
