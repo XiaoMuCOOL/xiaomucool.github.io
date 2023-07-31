@@ -71,6 +71,9 @@ docker  run --rm -it gitlab/gitlab-runner register -n \
        --docker-volumes /home/gitlab-runner/config:/etc/gitlab-runner \
        --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
        --description "docker镜像saas-prod-elk2服务器"
+# 上面两个都不行，要进入容器注册
+docker exec -it gitlab-runner /bin/bash
+gitlab-runner register
 ```
 
 # 辣鸡runner，配置要写死docker版本，不然哭死你
