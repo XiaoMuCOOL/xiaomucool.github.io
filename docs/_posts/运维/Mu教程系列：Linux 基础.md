@@ -60,8 +60,10 @@ $ tar -zxvf [文件名].gz -C [文件目录]    // 解压.gz文件到指定目�
 
 $ tar -jcvf [文件名].bz2 [文件目录]      // 压缩成.bz2格式,压缩率最高,速度最慢
 $ tar -jxvf [文件名].bz2 -C [文件目录]   // 解压.bz2文件到指定目录,目录必须存在
+
 $ tar -jcvf app.bz2 -C /home/ app      // 压缩app文件夹
-$ tar -jxvf app.bz2 -C /home/          // 压缩app文件夹到/home文件夹下
+$ tar -jxvf app.bz2 -C /home/          // 解压app.bz2文件到/home文件夹下
+$ tar -jxvkf app.bz2 -C /home/         // 不覆盖解压
 
 $ tar -jcvf example.bz2 example --exclude=example/temp // 不包含temp 文件夹
 

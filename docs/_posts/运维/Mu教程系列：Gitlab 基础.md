@@ -114,6 +114,19 @@ check_interval = 0
 docker run --rm -it -v /home/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner verify
 ```
 
+### 清理gitlab prometheus 磁盘占用过大
+
+```shell
+# 清理 docker 日志
+cat /dev/null > /var/lib/docker/containers/8bd86f42a9a4ec56bf08718f49cf939ad4fa038ca786deda6ae637f998addb0b/8bd86f42a9a4ec56bf08718f49cf939ad4fa038ca786deda6ae637f998addb0b-json.log
+
+# 清理 gitlab 日志
+docker exec -it gitlab /bin/bash
+gitlab-ctl stop prometheus
+rm -rf /var/opt/gitlab/prometheus/data/*
+gitlab-ctl start prometheus
+```
+
 ## Gitlab-CI 配置
 
 [.gitlab-ci.yml][0]
