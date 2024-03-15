@@ -41,6 +41,16 @@ $ kill 32102                           // 关闭进程(进程PID)
 $ which nohup                          // 查看命令绝对路径
 $ nohup xxxx &                         // 后台运行
 
+// 排查病毒
+$ top                                  // 查看使用率最高CPU
+$ ps -ef | grep xmrig                  // 查看病毒进程
+$ kill -9 PID                          // 关闭病毒进程
+$ ls -l /proc/进程ID/exe                // 查看病毒进程路径
+$ find / -name xmrig                   // 查找病毒文件
+$ rm -rf xmrig                         // 删除病毒文件
+$ chattr -i /etc/passwd /etc/shadow    // 取消文件只读
+$ sudo passwd root                     // 修改root密码
+
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
 $ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分大小
