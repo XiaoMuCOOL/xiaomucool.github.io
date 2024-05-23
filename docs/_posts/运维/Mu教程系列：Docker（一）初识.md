@@ -30,7 +30,15 @@ Docker相关的一些安装、命令、操作记录。
 sudo apt update
 // Ubuntu 自带docker.io源
 sudo apt install docker.io -y
+
+// 方法二
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get -y update
+sudo apt-get -y install docker-ce
 ```
+
 ### 常用命令
 
 ```cmd
