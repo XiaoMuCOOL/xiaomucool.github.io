@@ -17,7 +17,7 @@ Portainer 基本介绍。
 ## 简介
 
 ### 安装 - Portainer
-```cmd
+```shell
 # 初始化 swarm 集群  
 docker swarm init --advertise-addr [IP地址] 
 
@@ -31,8 +31,8 @@ docker service create \
 --replicas=1 \
 --constraint 'node.role == manager' \
 --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
---mount type=bind,src=//home/portainer,dst=/data \
-portainer/portainer-ce \
+--mount type=bind,src=//opt/portainer,dst=/data \
+portainer/portainer-ce:sts \
 -H unix:///var/run/docker.sock
 ```
 
@@ -61,7 +61,7 @@ docker service create \
   --constraint 'node.platform.os == linux' \
   --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
   --mount type=bind,src=//var/lib/docker/volumes,dst=/var/lib/docker/volumes \
-  portainer/agent:2.13.0
+  harbor.ant-lord.com/library/portainer-agent:2.20.3
 ```
 
 成功后填入：

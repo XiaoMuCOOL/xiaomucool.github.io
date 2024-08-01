@@ -39,6 +39,19 @@ sudo apt-get -y update
 sudo apt-get -y install docker-ce
 ```
 
+### 国内加速docker
+在 `etc/docker/daemon.json`中添加：
+```shell
+"registry-mirrors": ["https://docker.m.daocloud.io", "https://dockerproxy.com", "https://docker.mirrors.ustc.edu.cn", "https://docker.nju.edu.cn","https://x8zucbpk.mirror.aliyuncs.com/library"],
+```
+
+在运行：
+
+```shell
+systemctl daemon-reload
+systemctl restart docker
+```
+
 ### 常用命令
 
 ```cmd
