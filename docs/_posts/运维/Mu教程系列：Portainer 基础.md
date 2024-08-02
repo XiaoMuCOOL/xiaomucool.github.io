@@ -51,6 +51,12 @@ docker swarm init --advertise-addr [IP地址]
 # 设置不保存容器历史，默认是5
 docker swarm update --task-history-limit 1
 
+# 设置每天定时清理镜像
+crontab -e
+0 2 * * * /usr/bin/docker image prune -a
+service cron restart
+crontab -l
+
 docker network create \
   --driver overlay \
   portainer_agent_network
