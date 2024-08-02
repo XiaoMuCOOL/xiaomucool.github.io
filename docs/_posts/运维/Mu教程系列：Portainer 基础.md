@@ -48,6 +48,8 @@ portainer/portainer-ce:sts \
 ```shell
 # 初始化Swarm集群
 docker swarm init --advertise-addr [IP地址]
+# 设置不保存容器历史，默认是5
+docker swarm update --task-history-limit 1
 
 docker network create \
   --driver overlay \
