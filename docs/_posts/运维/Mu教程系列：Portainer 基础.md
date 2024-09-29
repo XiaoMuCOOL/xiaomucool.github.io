@@ -70,6 +70,18 @@ docker service create \
   --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
   --mount type=bind,src=//var/lib/docker/volumes,dst=/var/lib/docker/volumes \
   harbor.ant-lord.com/library/portainer-agent:2.20.3
+
+# 服务器安装docker插件
+docker plugin install grafana/loki-docker-driver:2.9.2 --alias loki --grant-all-permissions
+# 修改docker配置
+  "log-driver": "loki",
+  "log-opts": {
+      "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
+      "max-size": "50m",
+      "max-file": "10"
+  },
+systemctl daemon-reload
+systemctl restart docker
 ```
 
 成功后填入：
