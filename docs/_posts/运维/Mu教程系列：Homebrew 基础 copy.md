@@ -35,7 +35,7 @@ $ brew --version
 
 ### 常用命令
 
-```cmd
+```shell
 ## 查询
 brew search name
 
@@ -58,7 +58,7 @@ brew list
 
 ### 配置 zsh
 
-```cmd
+```shell
 ## 设置zsh为默认shell
 chsh -s /bin/zsh
 
@@ -71,10 +71,15 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 ## 安装自动补全插件：zsh-autosuggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-autosuggestions
 
+## 安装 powerlevel10k 主题
+cd ~/.oh-my-zsh/themes && ls
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 ## 打开配置文件
 open ~/.zshrc
 
 ## 修改配置文件
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     # other plugins...

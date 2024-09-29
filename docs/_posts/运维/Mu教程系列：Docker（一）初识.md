@@ -39,6 +39,26 @@ sudo apt-get -y update
 sudo apt-get -y install docker-ce
 ```
 
+### 国内加速docker
+在 `etc/docker/daemon.json`中添加：
+```shell
+"registry-mirrors": ["https://docker.m.daocloud.io", "https://dockerproxy.com", "https://docker.mirrors.ustc.edu.cn", "https://docker.nju.edu.cn","https://x8zucbpk.mirror.aliyuncs.com/library"],
+```
+
+在运行：
+
+```shell
+systemctl daemon-reload
+systemctl restart docker
+```
+
+### Docker打包下载到Harbor
+```shell
+docker pull postgres:16.0 --platform=linux/amd64
+docker tag [Image ID] harbor.ant-lord.com/library/[镜像名称:镜像TAG]
+docker push harbor.ant-lord.com/library/[镜像名称:镜像TAG]
+```
+
 ### 常用命令
 
 ```cmd

@@ -41,6 +41,13 @@ $ kill 32102                           // 关闭进程(进程PID)
 $ which nohup                          // 查看命令绝对路径
 $ nohup xxxx &                         // 后台运行
 
+// 查看服务
+$ systemctl list-units --type=service  // 查看所有服务状态
+$ systemctl list-units --type=service --state=exited // 查看所有退出状态的服务
+$ systemctl status xxxx                // 查看某个服务详细
+$ systemctl start xxxx                 // 启动某个服务
+$ systemctl restart xxxx               // 重启某个服务
+
 // 排查病毒
 $ top                                  // 查看使用率最高CPU
 $ ps -ef | grep xmrig                  // 查看病毒进程
@@ -51,6 +58,7 @@ $ rm -rf xmrig                         // 删除病毒文件
 $ chattr -i /etc/passwd /etc/shadow    // 取消文件只读
 $ sudo passwd root                     // 修改root密码
 
+// 磁盘相关
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
 $ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分大小
@@ -58,6 +66,7 @@ $ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文
 $ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt
 $ cat /dev/null > /opt/git/error.log   // 清空文件
 $ echo > /opt/git/error.log            // 清空文件
+$ docker builder prune --filter "until=72h" // 清理72小时前的构建缓存
 $ du -sh /var/lib/docker/containers/   // 查看文件夹大小
 $ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
 

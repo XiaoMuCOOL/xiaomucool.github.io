@@ -17,7 +17,7 @@ Portainer 基本介绍。
 ## 简介
 
 ### 安装 - Portainer
-```cmd
+```shell
 # 初始化 swarm 集群  
 docker swarm init --advertise-addr [IP地址] 
 
@@ -31,8 +31,8 @@ docker service create \
 --replicas=1 \
 --constraint 'node.role == manager' \
 --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
---mount type=bind,src=//home/portainer,dst=/data \
-portainer/portainer-ce \
+--mount type=bind,src=//opt/portainer,dst=/data \
+portainer/portainer-ce:sts \
 -H unix:///var/run/docker.sock
 ```
 
@@ -48,6 +48,14 @@ portainer/portainer-ce \
 ```shell
 # 初始化Swarm集群
 docker swarm init --advertise-addr [IP地址]
+# 设置不保存容器历史，默认是5
+docker swarm update --task-history-limit 1
+
+# 设置每天定时清理镜像
+crontab -e
+0 2 * * * /usr/bin/docker image prune -a
+service cron restart
+crontab -l
 
 docker network create \
   --driver overlay \
@@ -61,7 +69,19 @@ docker service create \
   --constraint 'node.platform.os == linux' \
   --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
   --mount type=bind,src=//var/lib/docker/volumes,dst=/var/lib/docker/volumes \
-  portainer/agent:2.13.0
+  harbor.ant-lord.com/library/portainer-agent:2.20.3
+
+# 服务器安装docker插件
+docker plugin install grafana/loki-docker-driver:2.9.2 --alias loki --grant-all-permissions
+# 修改docker配置
+  "log-driver": "loki",
+  "log-opts": {
+      "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
+      "max-size": "50m",
+      "max-file": "10"
+  },
+systemctl daemon-reload
+systemctl restart docker
 ```
 
 成功后填入：
