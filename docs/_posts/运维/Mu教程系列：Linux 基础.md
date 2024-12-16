@@ -58,9 +58,18 @@ $ rm -rf xmrig                         // 删除病毒文件
 $ chattr -i /etc/passwd /etc/shadow    // 取消文件只读
 $ sudo passwd root                     // 修改root密码
 
+// 查看corntab日志
+$ grep CRON /var/log/syslog            // 查看日志
+$ tail -f /var/www/shop/api/storage/logs/2024-10-10-laravel.log // 查看日志
+
 // 磁盘相关
 $ df -h                                // 查看系统磁盘使用情况
-$ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
+$ find / -size +100M |xargs ls -lh      // 查找大于50M的文件
+$ sudo journalctl --vacuum-size=500M    // 清理日志
+$ lsof | grep delete                    // 查看被删除的占用文件
+// 重启占用log的程序
+$ systemctl restart shop-horizon.service
+
 $ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分大小
 $ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文件
 $ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt

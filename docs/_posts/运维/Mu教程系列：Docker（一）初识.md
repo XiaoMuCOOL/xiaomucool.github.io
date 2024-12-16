@@ -40,9 +40,28 @@ sudo apt-get -y install docker-ce
 ```
 
 ### 国内加速docker
+创建docker配置文件并添加：
+
+```shell
+sudo vi /etc/docker/daemon.json
+```
 在 `etc/docker/daemon.json`中添加：
 ```shell
-"registry-mirrors": ["https://docker.m.daocloud.io", "https://dockerproxy.com", "https://docker.mirrors.ustc.edu.cn", "https://docker.nju.edu.cn","https://x8zucbpk.mirror.aliyuncs.com/library"],
+{
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://docker.m.daocloud.io"]
+}
+// :%d 删除所有内容
+{
+    "log-driver": "loki",
+    "log-opts": {
+        "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
+        "max-size": "50m",
+        "max-file": "10"
+    },
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://docker.m.daocloud.io"]
+}
 ```
 
 在运行：
