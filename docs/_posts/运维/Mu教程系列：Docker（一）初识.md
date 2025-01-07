@@ -30,7 +30,55 @@ Docker相关的一些安装、命令、操作记录。
 sudo apt update
 // Ubuntu 自带docker.io源
 sudo apt install docker.io -y
+
+// 方法二
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get -y update
+sudo apt-get -y install docker-ce
 ```
+
+### 国内加速docker
+创建docker配置文件并添加：
+
+```shell
+sudo vi /etc/docker/daemon.json
+```
+在 `etc/docker/daemon.json`中添加：
+```shell
+{
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://docker.m.daocloud.io"]
+}
+// :%d 删除所有内容
+{
+    "log-driver": "loki",
+    "log-opts": {
+        "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
+        "max-size": "500m",
+        "max-file": "10",
+        "env": "app_name,app_env"
+    },
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://dockerproxy.net"]
+}
+```
+
+在运行：
+
+```shell
+systemctl daemon-reload
+systemctl restart docker
+```
+
+### Docker打包下载到Harbor
+```shell
+docker pull postgres:16.0 --platform=linux/amd64
+docker tag [Image ID] harbor.ant-lord.com/library/[镜像名称:镜像TAG]
+docker push harbor.ant-lord.com/library/[镜像名称:镜像TAG]
+```
+
 ### 常用命令
 
 ```cmd
@@ -70,6 +118,10 @@ docker rmi IMAGESID    // 接着删除镜像
 
 // 提交镜像到hub
 docker push 用户名/仓库名:tag
+
+// 清除未使用的镜像
+docker image prune -f
+docker system prune -f
 
 ```
 

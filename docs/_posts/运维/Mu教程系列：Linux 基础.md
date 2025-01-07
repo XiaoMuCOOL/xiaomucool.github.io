@@ -41,13 +41,41 @@ $ kill 32102                           // 关闭进程(进程PID)
 $ which nohup                          // 查看命令绝对路径
 $ nohup xxxx &                         // 后台运行
 
+// 查看服务
+$ systemctl list-units --type=service  // 查看所有服务状态
+$ systemctl list-units --type=service --state=exited // 查看所有退出状态的服务
+$ systemctl status xxxx                // 查看某个服务详细
+$ systemctl start xxxx                 // 启动某个服务
+$ systemctl restart xxxx               // 重启某个服务
+
+// 排查病毒
+$ top                                  // 查看使用率最高CPU
+$ ps -ef | grep xmrig                  // 查看病毒进程
+$ kill -9 PID                          // 关闭病毒进程
+$ ls -l /proc/进程ID/exe                // 查看病毒进程路径
+$ find / -name xmrig                   // 查找病毒文件
+$ rm -rf xmrig                         // 删除病毒文件
+$ chattr -i /etc/passwd /etc/shadow    // 取消文件只读
+$ sudo passwd root                     // 修改root密码
+
+// 查看corntab日志
+$ grep CRON /var/log/syslog            // 查看日志
+$ tail -f /var/www/shop/api/storage/logs/2024-10-10-laravel.log // 查看日志
+
+// 磁盘相关
 $ df -h                                // 查看系统磁盘使用情况
-$ find / -size +50M |xargs ls -lh      // 查找大于50M的文件
+$ find / -size +100M |xargs ls -lh      // 查找大于50M的文件
+$ sudo journalctl --vacuum-size=500M    // 清理日志
+$ lsof | grep delete                    // 查看被删除的占用文件
+// 重启占用log的程序
+$ systemctl restart shop-horizon.service
+
 $ find / -iname *.txt                  // 查找以.txt结尾的文件,不许分大小
 $ find / -iname *.txt -a -iname "a*"   // 查找以a开头和以.txt结尾的文件
 $ find / -iname *.txt -a -iname "a*" -fprint /a.txt   // 查找以a开头和以.txt结尾的文件并输出到a.txt
 $ cat /dev/null > /opt/git/error.log   // 清空文件
 $ echo > /opt/git/error.log            // 清空文件
+$ docker builder prune --filter "until=72h" // 清理72小时前的构建缓存
 $ du -sh /var/lib/docker/containers/   // 查看文件夹大小
 $ ps -aux | grep -v grep | grep [PID]  // 通过PID查看是哪儿个服务
 
@@ -60,8 +88,10 @@ $ tar -zxvf [文件名].gz -C [文件目录]    // 解压.gz文件到指定目�
 
 $ tar -jcvf [文件名].bz2 [文件目录]      // 压缩成.bz2格式,压缩率最高,速度最慢
 $ tar -jxvf [文件名].bz2 -C [文件目录]   // 解压.bz2文件到指定目录,目录必须存在
+
 $ tar -jcvf app.bz2 -C /home/ app      // 压缩app文件夹
-$ tar -jxvf app.bz2 -C /home/          // 压缩app文件夹到/home文件夹下
+$ tar -jxvf app.bz2 -C /home/          // 解压app.bz2文件到/home文件夹下
+$ tar -jxvkf app.bz2 -C /home/         // 不覆盖解压
 
 $ tar -jcvf example.bz2 example --exclude=example/temp // 不包含temp 文件夹
 
