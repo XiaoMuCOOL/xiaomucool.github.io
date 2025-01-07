@@ -19,8 +19,7 @@ Portainer 基本介绍。
 ### 安装 - Portainer
 ```shell
 # 初始化 swarm 集群  
-docker swarm init --advertise-addr [IP地址] 
-
+docker swarm init --advertise-addr [IP地址]
 # 创建 portainer 挂载目录
 mkdir -p /home/portainer
 
@@ -51,9 +50,9 @@ docker swarm init --advertise-addr [IP地址]
 # 设置不保存容器历史，默认是5
 docker swarm update --task-history-limit 1
 
-# 设置每天定时清理镜像
+# 设置每周五定时清理镜像
 crontab -e
-0 2 * * * /usr/bin/docker image prune -a
+0 1 * * 5 /usr/bin/docker image prune -a -f >> /opt/docker_cleanup.log 2>&1
 service cron restart
 crontab -l
 
