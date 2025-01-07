@@ -42,7 +42,7 @@ curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIR
 kubectl label nodes pai-log kubernetes.io/role=worker
 
 # 设置私有仓库
-kubectl create secret docker-registry harbor --namespace=pai-pro --docker-server=harbor.ant-lord.com --docker-username=robot$gitlabci --docker-password=Dq17Su75M1SlAVdiHPlGawW5qhxXTBXt
+kubectl create secret docker-registry harbor --docker-server=harbor.ant-lord.com --docker-username=robot$gitlabci --docker-password=Dq17Su75M1SlAVdiHPlGawW5qhxXTBXt
 
 # 删除k3s
 # 对于master节点：
@@ -58,10 +58,19 @@ k3s kubectl get nodes
 # 查看某个服务的状态
 sudo kubectl get pods -n portainer
 
+# 安装helm
+snap install helm --classic
+helm repo update
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+helm upgrade --install ingress-nginx ingress-nginx \
+  --repo https://kubernetes.github.io/ingress-nginx \
+  --namespace ingress-nginx --create-namespace
+
 
 # 查看集群的运行情况
 kubectl get nodes -owide
 kubectl get all -A -owide
+kubectl api-resources -o wide
 kubectl describe nodes k3s-node-01
 kubectl -n kube-system describe deploy coredns
 
@@ -74,9 +83,20 @@ kubectl describe pod -n portainer portainer-agent-694c6ddbd5-w6p7k
 
 # 如果遇见docker.io/rancher/mirrored-pause:3.6报错，则执行
 kubectl get pods -n kube-system
-docker pull dockerproxy.net/rancher/mirrored-coredns-coredns:1.11.3
-docker tag dockerproxy.net/rancher/mirrored-coredns-coredns:1.11.3 rancher/mirrored-coredns-coredns:1.11.3
-docker rmi dockerproxy.net/rancher/mirrored-coredns-coredns:1.11.3
+kubectl describe pod -n kube-system svclb-traefik-7c1e2c3e-r6zg8
+docker pull dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0
+docker pull harbor.ant-lord.com/library/portainer-agent:2.20.3
+docker pull dockerproxy.net/rancher/mirrored-pause:3.6
+docker pull dockerproxy.net/rancher/klipper-lb:v0.4.9
+docker pull dockerproxy.net/bitnami/etcd:3.5
+docker pull dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008
+docker tag dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 rancher/mirrored-coredns-coredns:1.12.0
+docker tag harbor.ant-lord.com/library/portainer-agent:2.20.3 portainer/agent:2.20.3
+docker tag dockerproxy.net/rancher/mirrored-pause:3.6 rancher/mirrored-pause:3.6
+docker tag dockerproxy.net/rancher/klipper-lb:v0.4.9 rancher/klipper-lb:v0.4.9
+docker tag dockerproxy.net/bitnami/etcd:3.5 bitnami/etcd:3.5
+docker tag dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008 rancher/klipper-helm:v0.9.3-build20241008
+docker rmi dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 harbor.ant-lord.com/library/portainer-agent:2.20.3 dockerproxy.net/rancher/mirrored-pause:3.6 dockerproxy.net/rancher/klipper-lb:v0.4.9 dockerproxy.net/bitnami/etcd:3.5
 
 docker pull harbor.ant-lord.com/library/portainer-agent:2.20.3
 docker tag harbor.ant-lord.com/library/portainer-agent:2.20.3 portainer/agent:2.20.3
@@ -87,6 +107,7 @@ docker rmi harbor.ant-lord.com/library/portainer-agent:2.20.3
 ## 常用功能
 # 删除pod重新创建
 kubectl delete pod portainer-agent-694c6ddbd5-l6667 -n portainer
+kubectl delete -n kube-system pod coredns-ccb96694c-qm72l
 
 # 查看deployment
 kubectl get deployments -n kube-system
@@ -101,3 +122,5 @@ kubectl describe pod -n kube-system coredns-667bcf6fbf-j8hqm
 
 [0]:https://docs.rancher.cn/docs/k3s/cluster-access/_index
 [1]:https://docs.k3s.io/zh/
+[2]:https://doc.traefik.io/traefik
+[3]:https://dtm.pub/deploy/base.html#%E6%B3%A8%E6%84%8F%E7%82%B9

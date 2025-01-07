@@ -19,8 +19,7 @@ Portainer 基本介绍。
 ### 安装 - Portainer
 ```shell
 # 初始化 swarm 集群  
-docker swarm init --advertise-addr [IP地址] 
-
+docker swarm init --advertise-addr [IP地址]
 # 创建 portainer 挂载目录
 mkdir -p /home/portainer
 

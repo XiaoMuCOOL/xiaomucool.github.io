@@ -56,11 +56,12 @@ sudo vi /etc/docker/daemon.json
     "log-driver": "loki",
     "log-opts": {
         "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
-        "max-size": "50m",
-        "max-file": "10"
+        "max-size": "500m",
+        "max-file": "10",
+        "env": "app_name,app_env"
     },
     "insecure-registries":["https://harbor.ant-lord.com"],
-    "registry-mirrors": ["https://docker.m.daocloud.io"]
+    "registry-mirrors": ["https://dockerproxy.net"]
 }
 ```
 
@@ -117,6 +118,10 @@ docker rmi IMAGESID    // 接着删除镜像
 
 // 提交镜像到hub
 docker push 用户名/仓库名:tag
+
+// 清除未使用的镜像
+docker image prune -f
+docker system prune -f
 
 ```
 
