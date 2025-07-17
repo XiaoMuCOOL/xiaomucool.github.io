@@ -81,7 +81,7 @@ docker push harbor.ant-lord.com/library/[镜像名称:镜像TAG]
 
 ### 常用命令
 
-```cmd
+```shell
 // 基本
 docker version // 查看版本详情
 docker -v      // 查看版本简单版
@@ -115,6 +115,7 @@ docker commit -m "msg" -a "Author" CONTAINERID 用户名/仓库名:tag
 // 删除镜像
 docker rm CONTAINERID  // 必须先删除所有容器
 docker rmi IMAGESID    // 接着删除镜像
+docker rmi $(docker images -f "dangling=true" -q) // 删除所有悬空镜像
 
 // 提交镜像到hub
 docker push 用户名/仓库名:tag
@@ -122,12 +123,12 @@ docker push 用户名/仓库名:tag
 // 清除未使用的镜像
 docker image prune -f
 docker system prune -f
-
+docker rmi $(docker images -f "dangling=true" -q) // 删除所有悬空镜像
 ```
 
 ### Dockerfile常用参数
 
-```cmd
+```shell
 FROM        // 指定构建镜像的基础源镜像
 MAINTAINER  // 维护者的信息
 RUN         // 在当前镜像基础上执行指定命令
@@ -147,7 +148,7 @@ docker build -t name 目录 // 当前目录用`.`表示
 
 打开`PowerShell`,运行：
 
-```cmd
+```shell
 ubuntu config --default-user root  // 默认root登录
 
 // 进入ubuntu系统，设置默认连接windows的守护进程
@@ -158,7 +159,7 @@ source ~/.bashrc                           // 运行下
 
 ### docker-compose.yml常用参数
 
-```cmd
+```shell
 version: "3"
 services:
   web:                              # 自定义服务名叫web
@@ -181,7 +182,7 @@ networks:
 
 ### Swarm 常用命令
 
-```cmd
+```shell
 // 基本
 docker swarm init                                // 初始化swarm
 docker stack deploy -c docker-compose.yml name   // 部署新堆栈或更新现有堆栈
@@ -197,7 +198,7 @@ systemctl restart docker                        // 重启swarm
 ```
 
 ### 使用阿里云镜像库
-```cmd
+```shell
 # 登陆
 docker login --username=master@bingblue.com registry.cn-shanghai.aliyuncs.com
 
@@ -223,7 +224,7 @@ docker push registry.cn-shanghai.aliyuncs.com/bingblue/[镜像名]:[镜像版本
 
 ### 一、编写docker-compose.yml文件
 
-```compose
+```yaml
 version: '3.6'
 services:
   # nginx 略...

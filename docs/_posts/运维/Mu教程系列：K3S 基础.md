@@ -16,7 +16,7 @@ K3S 基本介绍。
 
 ## 简介
 
-### 安装
+                                      ### 安装
 ```shell
 # 国内
 export INSTALL_K3S_EXEC="--docker"
@@ -37,7 +37,9 @@ curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIR
 # pai-api 172.28.95.181 139.224.45.9
 curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn K3S_URL=https://139.224.45.9:6443 K3S_TOKEN=K10c43088886544d0d4ad2be78502d691291e14acd94ec0ecbec918686d0bdfb255::server:e544c7e219ec32e2fa72cc76f7dc5c78 sh -
 # pai-srv 172.28.95.187 106.14.43.112
-curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn K3S_URL=https://106.14.43.112:6443 K3S_TOKEN=K105abb45f1cbfbdc91b1c9d99e5e3d4645ef674dcc91a856abc10fe34e9725abdb::server:15bd3579a84b3fd4e08038cc3e3ea39c sh -
+curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn K3S_URL=https://172.28.95.187:6443 K3S_TOKEN=K105abb45f1cbfbdc91b1c9d99e5e3d4645ef674dcc91a856abc10fe34e9725abdb::server:15bd3579a84b3fd4e08038cc3e3ea39c sh -
+# test004 172.28.95.165	106.14.40.194
+curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn K3S_URL=https://172.28.95.165:6443 K3S_TOKEN=K102567aefb1914ee5f79ac2c566be196fbd43de1aa0475aa4c95598d6b8b8947e9::server:e4b4309c9f38d50b203b907f030b489c sh -
 # 设置节点标签
 kubectl label nodes pai-log kubernetes.io/role=worker
 
@@ -88,20 +90,60 @@ docker pull dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0
 docker pull harbor.ant-lord.com/library/portainer-agent:2.20.3
 docker pull dockerproxy.net/rancher/mirrored-pause:3.6
 docker pull dockerproxy.net/rancher/klipper-lb:v0.4.9
-docker pull dockerproxy.net/bitnami/etcd:3.5
+# docker pull dockerproxy.net/bitnami/etcd:3.5
 docker pull dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008
 docker tag dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 rancher/mirrored-coredns-coredns:1.12.0
 docker tag harbor.ant-lord.com/library/portainer-agent:2.20.3 portainer/agent:2.20.3
 docker tag dockerproxy.net/rancher/mirrored-pause:3.6 rancher/mirrored-pause:3.6
 docker tag dockerproxy.net/rancher/klipper-lb:v0.4.9 rancher/klipper-lb:v0.4.9
-docker tag dockerproxy.net/bitnami/etcd:3.5 bitnami/etcd:3.5
+# docker tag dockerproxy.net/bitnami/etcd:3.5 bitnami/etcd:3.5
 docker tag dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008 rancher/klipper-helm:v0.9.3-build20241008
-docker rmi dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 harbor.ant-lord.com/library/portainer-agent:2.20.3 dockerproxy.net/rancher/mirrored-pause:3.6 dockerproxy.net/rancher/klipper-lb:v0.4.9 dockerproxy.net/bitnami/etcd:3.5
+docker rmi dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 harbor.ant-lord.com/library/portainer-agent:2.20.3 dockerproxy.net/rancher/mirrored-pause:3.6 dockerproxy.net/rancher/klipper-lb:v0.4.9 dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008 dockerproxy.net/bitnami/etcd:3.5
 
+```
+
+## 子节点安装
+```bash
+apt update
+apt upgrade -y
+sudo apt install docker.io -y
+sudo vi /etc/docker/daemon.json
+{
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://docker.m.daocloud.io"]
+}
+systemctl daemon-reload
+systemctl restart docker
+docker plugin install grafana/loki-docker-driver:2.9.2 --alias loki --grant-all-permissions
+sudo vi /etc/docker/daemon.json
+// :%d 删除所有内容
+{
+    "log-driver": "loki",
+    "log-opts": {
+        "loki-url": "http://139.224.223.183:3100/loki/api/v1/push",
+        "max-size": "500m",
+        "max-file": "10",
+        "env": "app_name,app_env"
+    },
+    "insecure-registries":["https://harbor.ant-lord.com"],
+    "registry-mirrors": ["https://dockerproxy.net"]
+}
+systemctl daemon-reload
+systemctl restart docker
+export INSTALL_K3S_EXEC="--docker"
+curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn K3S_URL=https://172.28.95.181:6443 K3S_TOKEN=K10c43088886544d0d4ad2be78502d691291e14acd94ec0ecbec918686d0bdfb255::server:e544c7e219ec32e2fa72cc76f7dc5c78 sh -
+
+docker pull dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0
 docker pull harbor.ant-lord.com/library/portainer-agent:2.20.3
+docker pull dockerproxy.net/rancher/mirrored-pause:3.6
+docker pull dockerproxy.net/rancher/klipper-lb:v0.4.9
+docker pull dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008
+docker tag dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 rancher/mirrored-coredns-coredns:1.12.0
 docker tag harbor.ant-lord.com/library/portainer-agent:2.20.3 portainer/agent:2.20.3
-docker rmi harbor.ant-lord.com/library/portainer-agent:2.20.3
-
+docker tag dockerproxy.net/rancher/mirrored-pause:3.6 rancher/mirrored-pause:3.6
+docker tag dockerproxy.net/rancher/klipper-lb:v0.4.9 rancher/klipper-lb:v0.4.9
+docker tag dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008 rancher/klipper-helm:v0.9.3-build20241008
+docker rmi dockerproxy.net/rancher/mirrored-coredns-coredns:1.12.0 harbor.ant-lord.com/library/portainer-agent:2.20.3 dockerproxy.net/rancher/mirrored-pause:3.6 dockerproxy.net/rancher/klipper-lb:v0.4.9 dockerproxy.net/rancher/klipper-helm:v0.9.3-build20241008
 ```
 
 ## 常用功能
@@ -114,6 +156,9 @@ kubectl get deployments -n kube-system
 kubectl edit deployment coredns -n kube-system
 kubectl describe pod -n kube-system coredns-667bcf6fbf-j8hqm
 
+# 删除所有pvc
+kubectl delete pvc --all -n <namespace>
+kubectl delete pv --all
 ### 添加其他服务器
 
 操作路径：

@@ -65,7 +65,7 @@ $ tail -f /var/www/shop/api/storage/logs/2024-10-10-laravel.log // 查看日志
 // 磁盘相关
 $ df -h                                // 查看系统磁盘使用情况
 $ find / -size +100M |xargs ls -lh      // 查找大于50M的文件
-$ sudo journalctl --vacuum-size=500M    // 清理日志
+$ sudo journalctl --vacuum-size=100M    // 清理日志
 $ lsof | grep delete                    // 查看被删除的占用文件
 // 重启占用log的程序
 $ systemctl restart shop-horizon.service
